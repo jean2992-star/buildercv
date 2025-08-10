@@ -1,0 +1,93 @@
+/* Modelo 5 – Sidebar clara + nome grande à direita (igual à imagem) */
+.cv.m5{
+  --accent:#6aa79a;        /* verde das linhas */
+  --accent-700:#4b8e7f;
+  --side:#f1f3f4;          /* fundo da sidebar */
+  --text:#0b1220;
+
+  --page-pad: 24px;
+  --section-gap: 22px;
+  --para-gap: 10px;
+  --line-h: 1.55;
+
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Barras preta topo/rodapé */
+.cv.m5 .topbar,
+.cv.m5 .bottombar{
+  height: 18px;
+  background: #111;
+}
+.cv.m5 .bottombar{ margin-top: 18px; }
+
+/* Grade principal */
+.cv.m5 .page{
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 28px;
+  padding: var(--page-pad);
+  line-height: var(--line-h);
+}
+
+/* Sidebar */
+.cv.m5 .left{
+  background: var(--side);
+  border-right: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 16px;
+}
+.cv.m5 .left .photo{
+  width:120px; height:120px;
+  border-radius: 6px; overflow:hidden;
+  background:#d9dee2; margin-bottom: 16px;
+}
+.cv.m5 .left .photo img{ width:100%; height:100%; object-fit:cover; display:block }
+.cv.m5 .left h3{
+  font-size: 13px; text-transform: uppercase; letter-spacing:.6px;
+  color: var(--accent-700);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 6px; margin: 12px 0 8px;
+}
+.cv.m5 .left p{ margin:0 0 var(--para-gap) }
+.cv.m5 .left .muted{ color:#374151 }
+.cv.m5 .left .edu{ margin:8px 0 10px }
+
+/* Coluna direita */
+.cv.m5 .right{ padding-top: 6px }
+
+/* Nome grande com role embaixo */
+.cv.m5 .name{ margin-bottom: 10px }
+.cv.m5 .name h1{
+  margin:0; font-size: 36px; font-weight: 800; letter-spacing:.4px;
+}
+.cv.m5 .name .role{ margin-top:6px; color:#475569; font-weight:600 }
+
+/* Seções */
+.cv.m5 .block{ margin-top: var(--section-gap) }
+.cv.m5 h2{
+  font-size: 16px; font-weight: 700;
+  color: var(--text); margin:0 0 8px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 6px;
+}
+.cv.m5 p{ margin:0 0 var(--para-gap) }
+
+/* Experiência */
+.cv.m5 .xp{ margin: 10px 0 14px }
+.cv.m5 .xp-title{ font-weight: 700; margin-bottom: 2px }
+.cv.m5 .xp-meta{ color:#6b7280; font-size: 14px; margin-bottom: 6px }
+
+/* Quebras de linha vindas do textarea */
+.cv.m5 .multiline{ white-space: pre-line }
+
+/* Responsivo */
+@media (max-width: 860px){
+  .cv.m5 .page{ grid-template-columns: 1fr; gap:18px }
+}

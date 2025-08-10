@@ -1,0 +1,98 @@
+<!-- Modelo 10 – Top Banner com Foto -->
+<div class="cv m10">
+  <header class="banner">
+    <div class="photo">
+      {{#if photo}}<img src="{{photo}}" alt="Foto">{{/if}}
+    </div>
+    <div class="info">
+      <h1>{{nome}}</h1>
+      {{#if titulo}}<div class="role">{{titulo}}</div>{{/if}}
+      <div class="contact">
+        {{#if email}}<span>✉️ {{email}}</span>{{/if}}
+        {{#if telefone}}<span>📞 {{telefone}}</span>{{/if}}
+        {{#if local}}<span>📍 {{local}}</span>{{/if}}
+        {{#if links}}<span>🔗 {{links}}</span>{{/if}}
+      </div>
+    </div>
+  </header>
+
+  {{#if resumo}}
+  <section class="block">
+    <h2>Resumo</h2>
+    <p>{{resumo}}</p>
+  </section>
+  {{/if}}
+
+  <div class="cols">
+    <main>
+      {{#if experiencias.length}}
+      <section class="block">
+        <h2>Experiência</h2>
+        {{#each experiencias}}
+        <article class="xp">
+          <div class="line1">
+            <strong>{{cargo}}</strong> — {{empresa}} <small>({{inicio}}{{#if fim}} – {{fim}}{{/if}})</small>
+          </div>
+          <ul class="bullets">
+            {{#each (splitLines descricao)}}{{#if this}}<li>{{this}}</li>{{/if}}{{/each}}
+          </ul>
+        </article>
+        {{/each}}
+      </section>
+      {{/if}}
+    </main>
+
+    <aside>
+      {{#if educacao.length}}
+      <section class="block">
+        <h2>Educação</h2>
+        {{#each educacao}}
+          <p><strong>{{curso}}</strong><br/><span class="muted">{{instituicao}}</span> <small>({{inicio}}–{{fim}})</small></p>
+        {{/each}}
+      </section>
+      {{/if}}
+
+      {{#if skills}}<section class="block"><h2>Habilidades</h2><p>{{skills}}</p></section>{{/if}}
+      {{#if idiomas}}<section class="block"><h2>Idiomas</h2><p>{{idiomas}}</p></section>{{/if}}
+      {{#if projetos.length}}
+      <section class="block">
+        <h2>Projetos</h2>
+        <ul class="list">
+          {{#each projetos}}
+            <li><strong>{{titulo}}</strong>: {{descricao}} {{#if link}}(<a href="{{link}}">{{link}}</a>){{/if}}</li>
+          {{/each}}
+        </ul>
+      </section>
+      {{/if}}
+    </aside>
+    {{!-- Extras padronizados --}}
+{{#if cursos}}
+<section class="block">
+  <h2>Cursos e Certificações</h2>
+  <p class="multiline">{{cursos}}</p>
+</section>
+{{/if}}
+
+{{#if softwares}}
+<section class="block">
+  <h2>Softwares</h2>
+  <p class="multiline">{{softwares}}</p>
+</section>
+{{/if}}
+
+{{#if atividades}}
+<section class="block">
+  <h2>Atividades</h2>
+  <p class="multiline">{{atividades}}</p>
+</section>
+{{/if}}
+
+{{#if infoExtra}}
+<section class="block">
+  <h2>Informações Complementares</h2>
+  <p class="multiline">{{infoExtra}}</p>
+</section>
+{{/if}}
+
+  </div>
+</div>

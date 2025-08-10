@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Gerador de Currículo</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <!-- Handlebars + html2pdf via CDN -->
+<link rel="stylesheet" href="css/styles.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Gerador Automático de Currículos</h1>
+    <div class="actions">
+      <select id="templateSelect" title="Modelo">
+  <option value="modelo1">Modelo 1</option>
+  <option value="modelo2">Modelo 2</option>
+  <option value="modelo3">Modelo 3</option>
+  <option value="modelo4">Modelo 4</option>
+  <option value="modelo5" selected>Modelo 5</option>
+  <option value="modelo6">Modelo 6</option>
+  <option value="modelo7">Modelo 7</option>
+  <option value="modelo8">Modelo 8</option>
+  <option value="modelo9">Modelo 9</option>
+  <option value="modelo10">Modelo 10</option>
+</select>
+
+      <button id="btnPreview">Pré-visualizar</button>
+      <button id="btnPDF">Baixar PDF</button>
+      <button id="btnSalvar">Salvar rascunho</button>
+      <button id="btnLimpar">Limpar</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Formulário -->
+    <section class="panel">
+      <h2>Seus dados</h2>
+
+      <h3>Informações pessoais</h3>
+      <div class="grid">
+        <label>Nome <input id="nome" placeholder="Seu nome completo"/></label>
+        <label>Cargo-alvo <input id="titulo" placeholder="Desenvolvedor Full Stack"/></label>
+        <label>Email <input id="email" placeholder="voce@email.com"/></label>
+        <label>Telefone <input id="telefone" placeholder="+55 49 9 8888-7777"/></label>
+        <label>Localidade <input id="local" placeholder="Chapecó, SC"/></label>
+        <label>Links (GitHub/LinkedIn) <input id="links" placeholder="github.com/..., linkedin.com/in/..."/></label>
+      </div>
+      <!-- Foto (só aparece quando o modelo exige) -->
+<div id="fotoWrap" class="foto-wrap" style="display:none">
+  <label>Foto (apenas para modelos com foto)
+    <input id="fotoInput" type="file" accept="image/*">
+  </label>
+  <div class="foto-preview" style="margin-top:8px">
+    <img id="fotoPreview" alt="Prévia da foto" style="max-width:140px;border-radius:8px;display:none"/>
+  </div>
+</div>
+
+
+      <label>Resumo profissional
+        <textarea id="resumo" rows="4" placeholder="Resumo breve com resultados e tecnologias-chave."></textarea>
+      </label>
+
+      <h3>Experiências</h3>
+      <div id="expList"></div>
+      <button class="ghost" id="addExp">+ Adicionar experiência</button>
+
+      <h3>Educação</h3>
+      <div id="eduList"></div>
+      <button class="ghost" id="addEdu">+ Adicionar educação</button>
+
+      <h3>Habilidades</h3>
+      <input id="skills" placeholder="HTML, CSS, JS, Python, SQL"/>
+
+      <h3>Projetos</h3>
+      <div id="projList"></div>
+      <button class="ghost" id="addProj">+ Adicionar projeto</button>
+
+      <h3>Idiomas</h3>
+      <input id="idiomas" placeholder="Português (nativo), Inglês (intermediário)"/>
+      <h3>Cursos e Certificações</h3>
+<textarea id="cursos" rows="4" placeholder="Ex.: AWS re/Start (2025), Python e C (IFES, 2024)&#10;Um por linha."></textarea>
+
+<h3>Softwares (opcional)</h3>
+<textarea id="softwares" rows="3" placeholder="Ex.: Buffer, Monday.com, Google Trends, Adobe Illustrator"></textarea>
+
+<h3>Atividades</h3>
+<textarea id="atividades" rows="3" placeholder="Ex.: Programação; Academia; Estudar; Viajar"></textarea>
+
+<h3>Informações Complementares</h3>
+<textarea id="infoExtra" rows="4" placeholder="Ex.: Disponibilidade integral; Boa comunicação; Trabalho em equipe"></textarea>
+
+    </section>
+
+    <!-- Otimizador ATS -->
+    <section class="panel">
+      <h2>Otimizador para a vaga</h2>
+     <textarea data-ats="desc" rows="8" placeholder="Cole a vaga aqui"></textarea>
+  <button data-ats="btn">Analisar compatibilidade</button>
+
+<div data-ats="out" class="ats-result"></div>
+
+    </section>
+
+    <!-- Preview -->
+    <section class="preview">
+      <div id="cvRoot" class="cv-root"></div>
+    
+    </section>
+  </main>
+
+  <footer class="foot">
+    <small>© 2025 Jean Ivelsonne Dorvilma — Gerador de Currículos</small>
+  </footer>
+</body>
+</html>

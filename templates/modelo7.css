@@ -1,0 +1,93 @@
+/* Modelo 7 – Sidebar escura + conteúdo claro (estilo Rocky) */
+.cv.m7-rocky{
+  --dark:#2b2f35;
+  --line:#c4c7cc;
+  --muted:#6b7280;
+  --page-pad: 22px;
+  --gap: 22px;
+  font-family: Inter, Arial, sans-serif;
+  color:#111; background:#fff;
+  max-width: 915px; margin:0 auto;
+  border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;
+  display:grid; grid-template-columns: 265px 1fr;
+}
+
+/* Sidebar */
+.cv.m7-rocky .left{
+  background:#efefef; padding:18px 16px; position:relative;
+}
+.cv.m7-rocky .left::before{
+  content:""; position:absolute; top:0; left:0; bottom:0; width:70px; background:#3e434a;
+}
+.cv.m7-rocky .photo{
+  width:120px; height:120px; border-radius:6px; overflow:hidden;
+  margin:0 0 14px 70px; background:#ddd;
+}
+.cv.m7-rocky .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.cv.m7-rocky .box{ margin-left:70px; margin-bottom:14px }
+.cv.m7-rocky .box h3{
+  font-size:13px; text-transform:uppercase; letter-spacing:.4px; margin:0 0 6px;
+  color:#1f2937;
+  border-bottom:1px solid var(--line); padding-bottom:6px;
+}
+.cv.m7-rocky .small{ font-size:13px }
+.cv.m7-rocky .multiline{ white-space: pre-line }
+
+/* Direita */
+.cv.m7-rocky .right{ padding: var(--page-pad) }
+
+/* Header com nome e contato */
+.cv.m7-rocky .head{ display:flex; justify-content:space-between; gap:12px; align-items:flex-start; margin-bottom:8px }
+.cv.m7-rocky .name h1{ margin:0; font-size:34px; font-weight:800 }
+.cv.m7-rocky .role{ margin-top:4px; color:#4b5563; font-weight:600 }
+.cv.m7-rocky .contact{ margin:0; padding:0; list-style:none; text-align:right; font-size:13px; color:#111 }
+.cv.m7-rocky .contact li{ margin:2px 0 }
+
+/* Sections */
+.cv.m7-rocky .block{ margin-top: var(--gap) }
+.cv.m7-rocky h2{
+  font-size:14px; text-transform:uppercase; letter-spacing:.6px; margin:0 0 8px;
+  border-bottom:1px solid var(--line); padding-bottom:6px;
+}
+.cv.m7-rocky .muted{ color: var(--muted) }
+
+/* Experiência */
+.cv.m7-rocky .xp{ padding:6px 0 }
+.cv.m7-rocky .xp-row{
+  display:grid; grid-template-columns: 260px 1fr; gap:16px;
+  border-bottom:1px solid #ededed; padding-bottom:8px; margin-bottom:8px;
+}
+.cv.m7-rocky .org{ font-size:13px; line-height:1.45 }
+.cv.m7-rocky .rolecol{ font-size:14px }
+.cv.m7-rocky .bullets{ margin:6px 0 0; padding-left:18px }
+.cv.m7-rocky .bullets li{ margin:4px 0 }
+
+/* Educação */
+.cv.m7-rocky .edu-row{
+  display:grid; grid-template-columns: 260px 1fr; gap:16px;
+  border-bottom:1px solid #ededed; padding-bottom:8px; margin-bottom:8px;
+}
+
+/* Competências (duas colunas com traço) */
+.cv.m7-rocky .skills-grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap:8px 18px;
+}
+.cv.m7-rocky .skill{ display:flex; align-items:center; gap:12px }
+.cv.m7-rocky .skill .bar{
+  flex:1; height:6px; background:#e5e7eb; border-radius:999px; overflow:hidden
+}
+.cv.m7-rocky .skill .bar i{ display:block; width:50%; height:100%; background:#9ca3af }
+
+/* Línguas com barrinha */
+.cv.m7-rocky .langs .lang{ display:flex; align-items:center; gap:12px; margin:6px 0 }
+.cv.m7-rocky .langs .bar{ flex:1; height:6px; background:#e5e7eb; border-radius:999px; overflow:hidden }
+.cv.m7-rocky .langs .bar span{ display:block; height:100%; background:#9ca3af }
+
+/* Responsivo */
+@media (max-width:880px){
+  .cv.m7-rocky{ grid-template-columns:1fr }
+  .cv.m7-rocky .left::before{ display:none }
+  .cv.m7-rocky .photo,.cv.m7-rocky .box{ margin-left:0 }
+  .cv.m7-rocky .xp-row,.cv.m7-rocky .edu-row{ grid-template-columns:1fr }
+  .cv.m7-rocky .contact{ text-align:left }
+}

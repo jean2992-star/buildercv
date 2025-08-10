@@ -1,0 +1,69 @@
+/* Modelo 2 – Sidebar Azul (ajustado) */
+.cv.m2{
+  --page-pad: 26px;
+  --section-gap: 24px;
+  --block-gap: 16px;
+  --para-gap: 10px;
+  --bullet-gap: 8px;
+  --line-h: 1.55;
+
+  font-family: Inter, Arial, sans-serif;
+  color:#0f172a; background:#fff;
+  max-width: 900px; margin:0 auto;
+  display:grid; grid-template-columns:300px 1fr;
+  border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;
+  line-height: var(--line-h);
+}
+
+/* Sidebar */
+.cv.m2 .left{ background:#0f2a52; color:#fff; padding:20px 18px }
+.cv.m2 .left h3{
+  margin:18px 0 10px; font-size:14px; letter-spacing:.6px; text-transform:uppercase;
+  border-bottom:1px solid rgba(255,255,255,.25); padding-bottom:6px;
+}
+.cv.m2 .left p{ margin:0 0 var(--para-gap); line-height: var(--line-h) }
+.cv.m2 .left .multiline{ white-space: pre-line }
+
+/* Foto — tamanho controlado, nunca estoura */
+.cv.m2 .photo{
+  width: 130px; height: 130px;
+  border-radius: 8px; background:#173a6d;
+  margin-bottom: 16px; overflow: hidden;
+}
+.cv.m2 .photo img{ width:100%; height:100%; object-fit: cover; display:block }
+
+/* Conteúdo */
+.cv.m2 .right{ padding: var(--page-pad); background:#fff }
+
+/* Título (segue padrão do modelo1) */
+.cv.m2 .title{
+  background:#0f2a52; color:#fff;
+  padding:16px; border-radius:8px;
+  margin-bottom: var(--block-gap);
+}
+.cv.m2 .title h1{ margin:0; font-size:30px }
+.cv.m2 .title .role{ font-weight:600; opacity:.95; margin-top:2px }
+
+/* Seções */
+.cv.m2 .block{ margin-top: var(--section-gap) }
+.cv.m2 h2{
+  font-size:16px; margin:0 0 10px; color:#0f2a52;
+  text-transform:uppercase; letter-spacing:.6px;
+  border-bottom:1px solid #e5e7eb; padding-bottom:6px;
+}
+
+/* Experiência */
+.cv.m2 .xp{ margin:12px 0 18px }
+.cv.m2 .xp .line1{ font-weight:600; margin-bottom:6px }
+.cv.m2 .bullets{ margin:6px 0 0; padding-left:18px }
+.cv.m2 .bullets li{ margin:0 0 var(--bullet-gap) }
+
+/* Parágrafos */
+.cv.m2 .right p{ margin:0 0 var(--para-gap) }
+
+/* RESPONSIVO — quando empilhar, o header (nome) vem primeiro */
+@media (max-width: 860px){
+  .cv.m2{ grid-template-columns: 1fr }
+  .cv.m2 .right{ order: 1 }
+  .cv.m2 .left{ order: 2 }
+}

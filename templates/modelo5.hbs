@@ -1,0 +1,91 @@
+<!-- Modelo 5 – Sidebar clara + nome grande à direita -->
+<div class="cv m5">
+  <div class="topbar"></div>
+
+  <div class="page">
+    <!-- Sidebar -->
+    <aside class="left">
+      {{#if photo}}
+      <div class="photo">
+        <img src="{{photo}}" alt="Foto">
+      </div>
+      {{/if}}
+
+      <section>
+        <h3>Contato</h3>
+        {{#if links}}<p class="muted">{{links}}</p>{{/if}}
+        {{#if telefone}}<p class="muted">{{telefone}}</p>{{/if}}
+        {{#if email}}<p class="muted">{{email}}</p>{{/if}}
+        {{#if local}}<p class="muted">{{local}}</p>{{/if}}
+      </section>
+
+      {{#if educacao.length}}
+      <section>
+        <h3>Formação</h3>
+        {{#each educacao}}
+          <p class="edu">
+            <strong>{{curso}}</strong><br/>
+            <span class="muted">{{instituicao}}</span><br/>
+            <small>{{inicio}}–{{fim}}</small>
+          </p>
+        {{/each}}
+      </section>
+      {{/if}}
+
+      {{#if skills}}
+      <section>
+        <h3>Habilidades</h3>
+        <p class="multiline">{{skills}}</p>
+      </section>
+      {{/if}}
+
+      {{#if idiomas}}
+      <section>
+        <h3>Idiomas</h3>
+        <p class="multiline">{{idiomas}}</p>
+      </section>
+      {{/if}}
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="right">
+      <header class="name">
+        <h1>{{nome}}</h1>
+        {{#if titulo}}<div class="role">{{titulo}}</div>{{/if}}
+      </header>
+
+      {{#if resumo}}
+      <section class="block">
+        <h2>Sobre mim</h2>
+        <p>{{resumo}}</p>
+      </section>
+      {{/if}}
+
+      {{#if experiencias.length}}
+      <section class="block">
+        <h2>Experiência</h2>
+        {{#each experiencias}}
+          <article class="xp">
+            <div class="xp-title"><strong>{{cargo}}</strong></div>
+            <div class="xp-meta">{{empresa}} · {{inicio}}{{#if fim}} – {{fim}}{{/if}}</div>
+            <p class="multiline">{{descricao}}</p>
+          </article>
+        {{/each}}
+      </section>
+      {{/if}}
+
+      {{!-- extras opcionais se você usar no formulário --}}
+      {{#if cursos}}
+      <section class="block"><h2>Cursos e Certificações</h2><p class="multiline">{{cursos}}</p></section>
+      {{/if}}
+      {{#if atividades}}
+      <section class="block"><h2>Atividades</h2><p class="multiline">{{atividades}}</p></section>
+      {{/if}}
+      {{#if infoExtra}}
+      <section class="block"><h2>Informações Complementares</h2><p class="multiline">{{infoExtra}}</p></section>
+      {{/if}}
+    </main>
+  </div>
+
+  <div class="bottombar"></div>
+</div>

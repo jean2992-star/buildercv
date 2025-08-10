@@ -1,0 +1,76 @@
+/* Modelo 8 – Sidebar verde + conteúdo claro (igual à referência) */
+.cv.m8-emerald{
+  --green:#1f6e63;       /* tom principal */
+  --green-700:#155349;
+  --side:#eaf2f0;        /* fundo sidebar */
+  --line:#cfe0db;
+  --muted:#4b5563;
+
+  --page-pad:22px;
+  --gap:22px;
+  --para:10px;
+
+  font-family: Inter, Arial, sans-serif;
+  color:#111; background:#fff;
+  max-width:920px; margin:0 auto;
+  border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;
+
+  display:grid; grid-template-columns: 285px 1fr;
+}
+
+/* ===== Sidebar ===== */
+.cv.m8-emerald .left{
+  background: var(--side);
+  padding: 18px 16px;
+  border-right: 4px solid var(--green);
+}
+.cv.m8-emerald .photo{
+  width:150px;height:150px;border-radius:6px;overflow:hidden;background:#d9dee2;
+  margin:0 0 14px;
+}
+.cv.m8-emerald .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+.cv.m8-emerald .left h3{
+  font-size:13px; text-transform:uppercase; letter-spacing:.6px; margin:10px 0 8px;
+  color:var(--green-700);
+  border-bottom:2px solid var(--line); padding-bottom:6px;
+}
+.cv.m8-emerald .left p{ margin:0 0 var(--para) }
+.cv.m8-emerald .left .muted{ color: var(--muted) }
+.cv.m8-emerald .small{ font-size:13px }
+.cv.m8-emerald .multiline{ white-space: pre-line }
+
+.cv.m8-emerald .langs .lang{ margin:8px 0 }
+.cv.m8-emerald .langs .label{ display:block; font-size:13px; margin-bottom:4px }
+.cv.m8-emerald .langs .bar{ height:6px; background:#e5e7eb; border-radius:999px; overflow:hidden }
+.cv.m8-emerald .langs .bar span{ display:block; height:100%; background:var(--green) }
+
+/* ===== Direita ===== */
+.cv.m8-emerald .right{ padding: var(--page-pad) }
+.cv.m8-emerald .head h1{
+  margin:0; font-size:32px; font-weight:800; color:#1e293b;
+}
+.cv.m8-emerald .role{ margin-top:4px; color:#475569; font-weight:600 }
+.cv.m8-emerald .underline{
+  height:6px; width:120px; background:var(--green); border-radius:3px; margin-top:8px;
+}
+
+/* Seções */
+.cv.m8-emerald .block{ margin-top: var(--gap) }
+.cv.m8-emerald h2{
+  font-size:14px; text-transform:uppercase; letter-spacing:.6px;
+  border-bottom:2px solid var(--line); padding-bottom:6px; margin:0 0 8px; color:#111;
+}
+.cv.m8-emerald p{ margin:0 0 var(--para) }
+
+/* Experiência */
+.cv.m8-emerald .xp{ margin:8px 0 12px; padding-bottom:8px; border-bottom:1px solid #eee }
+.cv.m8-emerald .xp-head{ font-weight:700; margin-bottom:4px }
+.cv.m8-emerald .xp-head .period{ color:#6b7280; margin-left:8px; font-weight:500 }
+.cv.m8-emerald .bullets{ margin:6px 0 0; padding-left:18px }
+.cv.m8-emerald .bullets li{ margin:4px 0 }
+
+/* Responsivo */
+@media (max-width:880px){
+  .cv.m8-emerald{ grid-template-columns:1fr }
+}

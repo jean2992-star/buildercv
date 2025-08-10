@@ -1,0 +1,123 @@
+<!-- Modelo 7 – Sidebar escura + conteúdo claro -->
+<div class="cv m7-rocky">
+  <aside class="left">
+    {{#if photo}}
+    <div class="photo"><img src="{{photo}}" alt="Foto"></div>
+    {{/if}}
+
+    {{#if resumo}}
+    <section class="box">
+      <h3>Sobre mim</h3>
+      <p class="multiline">{{resumo}}</p>
+    </section>
+    {{/if}}
+
+    {{#if links}}
+    <section class="box">
+      <h3>Ligações</h3>
+      <div class="multiline small">{{links}}</div>
+    </section>
+    {{/if}}
+
+    {{#if infoExtra}}
+    <section class="box">
+      <h3>Referência</h3>
+      <p class="multiline small">{{infoExtra}}</p>
+    </section>
+    {{/if}}
+
+    {{#if atividades}}
+    <section class="box">
+      <h3>Hobbies</h3>
+      <p class="multiline small">{{atividades}}</p>
+    </section>
+    {{/if}}
+  </aside>
+
+  <main class="right">
+    <header class="head">
+      <div class="name">
+        <h1>{{nome}}</h1>
+        {{#if titulo}}<div class="role">{{titulo}}</div>{{/if}}
+      </div>
+      <ul class="contact">
+        {{#if local}}<li>{{local}}</li>{{/if}}
+        {{#if email}}<li>{{email}}</li>{{/if}}
+        {{#if telefone}}<li>{{telefone}}</li>{{/if}}
+      </ul>
+    </header>
+
+    {{#if experiencias.length}}
+    <section class="block">
+      <h2>Experiência Profissional</h2>
+      {{#each experiencias}}
+      <article class="xp">
+        <div class="xp-row">
+          <div class="org">
+            <strong>{{empresa}}</strong><br/>
+            <span class="muted">{{local}}</span><br/>
+            <span class="muted">{{inicio}}{{#if fim}} – {{fim}}{{/if}}</span>
+          </div>
+          <div class="rolecol">
+            <strong>{{cargo}}</strong>
+            <ul class="bullets">
+              {{#each (splitLines descricao)}}{{#if this}}<li>{{this}}</li>{{/if}}{{/each}}
+            </ul>
+          </div>
+        </div>
+      </article>
+      {{/each}}
+    </section>
+    {{/if}}
+
+    {{#if educacao.length}}
+    <section class="block">
+      <h2>Educação</h2>
+      {{#each educacao}}
+      <div class="edu-row">
+        <div class="org">
+          <strong>{{instituicao}}</strong><br/>
+          <span class="muted">{{local}}</span><br/>
+          <span class="muted">{{inicio}}{{#if fim}} – {{fim}}{{/if}}</span>
+        </div>
+        <div class="course">
+          <strong>{{curso}}</strong>
+        </div>
+      </div>
+      {{/each}}
+    </section>
+    {{/if}}
+
+    {{#if skills}}
+    <section class="block">
+      <h2>Competências</h2>
+      <div class="skills-grid">
+        {{#each (splitLines skills)}}
+          {{#if this}}
+          <div class="skill">
+            <span>{{this}}</span>
+            <div class="bar"><i></i></div>
+          </div>
+          {{/if}}
+        {{/each}}
+      </div>
+    </section>
+    {{/if}}
+
+    {{#if idiomas}}
+    <section class="block">
+      <h2>Línguas</h2>
+      <div class="langs">
+        {{#each (splitLines idiomas)}}
+          {{#if this}}
+          <div class="lang">
+            <span class="label">{{langName this}}</span>
+            <div class="bar"><span style="width: {{nivelWidth this}};"></span></div>
+          </div>
+          {{/if}}
+        {{/each}}
+      </div>
+    </section>
+    {{/if}}
+  </main>
+</div>

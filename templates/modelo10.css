@@ -1,0 +1,37 @@
+/* Modelo 10 – Top Banner com Foto (espaçamento padronizado) */
+.cv.m10{
+  --page-pad: 18px;
+  --section-gap: 24px;
+  --block-gap: 16px;
+  --para-gap: 10px;
+  --bullet-gap: 8px;
+  --line-h: 1.55;
+
+  --accent:#16a34a;
+
+  font-family:Inter,Arial,sans-serif; color:#0b1220; background:#fff;
+  max-width:940px; margin:0 auto;
+  border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;
+  line-height: var(--line-h);
+}
+.cv.m10 .banner{
+  display:flex;gap:16px;align-items:center;
+  background:linear-gradient(90deg,var(--accent),#0b7a37);color:#fff;padding:18px;
+  margin-bottom: var(--block-gap);
+}
+.cv.m10 .photo{width:120px;height:120px;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.18);flex:0 0 auto}
+.cv.m10 .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.cv.m10 .info h1{margin:0}
+.cv.m10 .role{font-weight:600;opacity:.95;margin-top:2px}
+.cv.m10 .contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;font-size:14px}
+
+.cv.m10 .cols{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding:var(--page-pad)}
+.cv.m10 .block{margin-bottom:var(--section-gap)}
+.cv.m10 h2{font-size:15px;color:#0b1220;border-left:6px solid var(--accent);padding-left:10px;margin:0 0 10px}
+.cv.m10 .muted{color:#6b7280}
+.cv.m10 .line1{font-weight:600;margin-bottom:6px}
+.cv.m10 .bullets{margin:6px 0 0;padding-left:18px}
+.cv.m10 .bullets li{margin:0 0 var(--bullet-gap)}
+.cv.m10 .list{margin:0;padding-left:18px}
+.cv .multiline { white-space: pre-line; }
+@media (max-width:860px){.cv.m10 .cols{grid-template-columns:1fr}}

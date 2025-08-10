@@ -1,0 +1,89 @@
+<!-- Modelo 9 – Quadros -->
+<div class="cv m9">
+  <header class="head">
+    <h1>{{nome}}</h1>
+    {{#if titulo}}<div class="role">{{titulo}}</div>{{/if}}
+    <div class="contact">
+      {{#if email}}<span>✉️ {{email}}</span>{{/if}}
+      {{#if telefone}}<span>📞 {{telefone}}</span>{{/if}}
+      {{#if local}}<span>📍 {{local}}</span>{{/if}}
+      {{#if links}}<span>🔗 {{links}}</span>{{/if}}
+    </div>
+  </header>
+
+  {{#if resumo}}
+  <section class="card">
+    <h2>Resumo</h2>
+    <p>{{resumo}}</p>
+  </section>
+  {{/if}}
+
+  {{#if experiencias.length}}
+  <section class="card">
+    <h2>Experiência</h2>
+    {{#each experiencias}}
+    <article class="xp">
+      <div class="line1">
+        <strong>{{cargo}}</strong> — {{empresa}} <small>({{inicio}}{{#if fim}} – {{fim}}{{/if}})</small>
+      </div>
+      <ul class="bullets">
+        {{#each (splitLines descricao)}}{{#if this}}<li>{{this}}</li>{{/if}}{{/each}}
+      </ul>
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  <div class="cols">
+    {{#if educacao.length}}
+    <section class="card">
+      <h2>Educação</h2>
+      {{#each educacao}}
+        <p><strong>{{curso}}</strong> — {{instituicao}} <small>({{inicio}}–{{fim}})</small></p>
+      {{/each}}
+    </section>
+    {{/if}}
+
+    <section class="card">
+      {{#if skills}}<h2>Habilidades</h2><p>{{skills}}</p>{{/if}}
+      {{#if idiomas}}<h2>Idiomas</h2><p>{{idiomas}}</p>{{/if}}
+      {{#if projetos.length}}
+      <h2>Projetos</h2>
+      <ul class="list">
+        {{#each projetos}}
+          <li><strong>{{titulo}}</strong>: {{descricao}} {{#if link}}(<a href="{{link}}">{{link}}</a>){{/if}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </section>
+    {{!-- Extras padronizados --}}
+{{#if cursos}}
+<section class="block">
+  <h2>Cursos e Certificações</h2>
+  <p class="multiline">{{cursos}}</p>
+</section>
+{{/if}}
+
+{{#if softwares}}
+<section class="block">
+  <h2>Softwares</h2>
+  <p class="multiline">{{softwares}}</p>
+</section>
+{{/if}}
+
+{{#if atividades}}
+<section class="block">
+  <h2>Atividades</h2>
+  <p class="multiline">{{atividades}}</p>
+</section>
+{{/if}}
+
+{{#if infoExtra}}
+<section class="block">
+  <h2>Informações Complementares</h2>
+  <p class="multiline">{{infoExtra}}</p>
+</section>
+{{/if}}
+
+  </div>
+</div>

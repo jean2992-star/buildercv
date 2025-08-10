@@ -1,0 +1,86 @@
+/* Modelo 6 – Sidebar clara + faixa vinho (estilo da imagem) */
+.cv.m6-bordeaux{
+  --bordeaux:#7b2e2f;
+  --bordeaux-700:#632425;
+  --side:#efefef;
+  --line:#d9dadd;
+  --muted:#6b7280;
+
+  --page-pad:22px;
+  --gap:22px;
+  --para:10px;
+
+  font-family: Inter, Arial, sans-serif;
+  color:#111; background:#fff;
+  max-width:920px; margin:0 auto;
+  border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;
+
+  display:grid; grid-template-columns: 285px 1fr;
+}
+
+/* ===== Sidebar ===== */
+.cv.m6-bordeaux .left{
+  background: var(--side);
+  padding: 18px 16px;
+}
+.cv.m6-bordeaux .photo{
+  width: 150px; height: 150px; border-radius: 6px; overflow: hidden;
+  background:#ddd; margin:0 auto 14px;
+}
+.cv.m6-bordeaux .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+.cv.m6-bordeaux .box{
+  background:#fff; border:1px solid var(--line); border-radius:6px;
+  padding:12px; margin-bottom:12px;
+}
+.cv.m6-bordeaux .box h3{
+  font-size:13px; text-transform:uppercase; letter-spacing:.6px;
+  color:#222; margin:0 0 8px; border-bottom:1px solid var(--line); padding-bottom:6px;
+}
+.cv.m6-bordeaux .muted{ color: var(--muted) }
+.cv.m6-bordeaux .small{ font-size:13px }
+.cv.m6-bordeaux .multiline{ white-space: pre-line }
+.cv.m6-bordeaux .edu{ margin:8px 0 10px }
+
+/* Idiomas com barra */
+.cv.m6-bordeaux .langs .lang{ margin:8px 0 }
+.cv.m6-bordeaux .langs .label{ display:block; font-size:13px; margin-bottom:4px }
+.cv.m6-bordeaux .langs .bar{ height:6px; background:#e5e7eb; border-radius:999px; overflow:hidden }
+.cv.m6-bordeaux .langs .bar span{ display:block; height:100%; background:#9ca3af }
+
+/* ===== Direita ===== */
+.cv.m6-bordeaux .right{ padding: var(--page-pad) }
+
+/* Header com nome grande */
+.cv.m6-bordeaux .head h1{
+  margin:0; font-size:36px; font-weight:800; letter-spacing:.4px; color:#2a2a2a;
+}
+.cv.m6-bordeaux .head .role{ margin-top:6px; color:#475569; font-weight:600 }
+
+/* Faixa vinho do resumo */
+.cv.m6-bordeaux .summary{
+  background: var(--bordeaux);
+  color:#fff; border-radius:6px;
+  padding:12px 14px; margin-top:10px;
+}
+.cv.m6-bordeaux .summary p{ margin:0 }
+
+/* Seções */
+.cv.m6-bordeaux .block{ margin-top: var(--gap) }
+.cv.m6-bordeaux h2{
+  font-size:14px; text-transform:uppercase; letter-spacing:.6px;
+  border-bottom:2px solid var(--bordeaux); padding-bottom:6px; margin:0 0 8px;
+}
+.cv.m6-bordeaux p{ margin:0 0 var(--para) }
+
+/* Experiência */
+.cv.m6-bordeaux .xp{ margin:8px 0 12px; padding-bottom:8px; border-bottom:1px solid #eee }
+.cv.m6-bordeaux .xp-head{ font-weight:700; margin-bottom:4px }
+.cv.m6-bordeaux .xp-head .period{ color:#6b7280; margin-left:8px; font-weight:500 }
+.cv.m6-bordeaux .bullets{ margin:6px 0 0; padding-left:18px }
+.cv.m6-bordeaux .bullets li{ margin:4px 0 }
+
+/* Responsivo */
+@media (max-width:880px){
+  .cv.m6-bordeaux{ grid-template-columns:1fr }
+}

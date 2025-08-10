@@ -1,0 +1,32 @@
+/* Modelo 9 – Quadros (espaçamento padronizado) */
+.cv.m9{
+  --page-pad: 18px;
+  --section-gap: 24px;
+  --block-gap: 14px;
+  --para-gap: 10px;
+  --bullet-gap: 8px;
+  --line-h: 1.55;
+
+  --border:#e5e7eb; --title:#111827;
+
+  font-family:Inter,Arial,sans-serif; color:#111; background:#fff;
+  max-width:920px; margin:0 auto;
+  border:1px solid var(--border); border-radius:10px; padding: var(--page-pad);
+  line-height: var(--line-h);
+}
+.cv.m9 .head{border-bottom:2px solid var(--title);padding-bottom:8px;margin-bottom:var(--block-gap)}
+.cv.m9 h1{margin:0}
+.cv.m9 .role{font-weight:600;color:#374151}
+.cv.m9 .contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+
+.cv.m9 .card{border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin: var(--block-gap) 0;background:#fcfcfd}
+.cv.m9 .card h2{font-size:15px;margin:0 0 10px;color:var(--title);text-transform:uppercase;letter-spacing:.6px}
+.cv.m9 .xp{margin:8px 0 12px}
+.cv.m9 .xp .line1{font-weight:700;margin-bottom:6px}
+.cv.m9 .bullets{margin:6px 0 0;padding-left:18px}
+.cv.m9 .bullets li{margin:0 0 var(--bullet-gap)}
+.cv.m9 .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cv.m9 .list{margin:0;padding-left:18px}
+.cv .multiline { white-space: pre-line; }
+@media (max-width:800px){.cv.m9 .cols{grid-template-columns:1fr}}
+

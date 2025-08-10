@@ -1,0 +1,90 @@
+<!-- Modelo 8 – Sidebar verde + conteúdo claro -->
+<div class="cv m8-emerald">
+  <aside class="left">
+    {{#if photo}}
+    <div class="photo"><img src="{{photo}}" alt="Foto"></div>
+    {{/if}}
+
+    <section>
+      <h3>Contato</h3>
+      {{#if local}}<p class="muted">{{local}}</p>{{/if}}
+      {{#if telefone}}<p class="muted">{{telefone}}</p>{{/if}}
+      {{#if email}}<p class="muted">{{email}}</p>{{/if}}
+      {{#if links}}<p class="multiline small">{{links}}</p>{{/if}}
+    </section>
+
+    {{#if skills}}
+    <section>
+      <h3>Habilidades & Competências</h3>
+      <p class="multiline small">{{skills}}</p>
+    </section>
+    {{/if}}
+
+    {{#if idiomas}}
+    <section>
+      <h3>Idiomas</h3>
+      <div class="langs">
+        {{#each (splitLines idiomas)}}
+          {{#if this}}
+          <div class="lang">
+            <span class="label">{{langName this}}</span>
+            <div class="bar"><span style="width: {{nivelWidth this}};"></span></div>
+          </div>
+          {{/if}}
+        {{/each}}
+      </div>
+    </section>
+    {{/if}}
+
+    {{#if infoExtra}}
+    <section>
+      <h3>Informações Complementares</h3>
+      <p class="multiline small">{{infoExtra}}</p>
+    </section>
+    {{/if}}
+  </aside>
+
+  <main class="right">
+    <header class="head">
+      <h1>{{nome}}</h1>
+      {{#if titulo}}<div class="role">{{titulo}}</div>{{/if}}
+      <div class="underline"></div>
+    </header>
+
+    {{#if resumo}}
+    <section class="block">
+      <h2>Resumo</h2>
+      <p class="multiline">{{resumo}}</p>
+    </section>
+    {{/if}}
+
+    {{#if experiencias.length}}
+    <section class="block">
+      <h2>Experiência Profissional</h2>
+      {{#each experiencias}}
+      <article class="xp">
+        <div class="xp-head">
+          <strong>{{empresa}}</strong> — <em>{{cargo}}</em>
+          <span class="period">{{inicio}}{{#if fim}} – {{fim}}{{/if}}</span>
+        </div>
+        <ul class="bullets">
+          {{#each (splitLines descricao)}}{{#if this}}<li>{{this}}</li>{{/if}}{{/each}}
+        </ul>
+      </article>
+      {{/each}}
+    </section>
+    {{/if}}
+
+    {{#if educacao.length}}
+    <section class="block">
+      <h2>Formação Acadêmica</h2>
+      {{#each educacao}}
+        <p class="edu">
+          <strong>{{instituicao}}</strong> — {{local}}<br/>
+          {{curso}} <small>({{inicio}}{{#if fim}} – {{fim}}{{/if}})</small>
+        </p>
+      {{/each}}
+    </section>
+    {{/if}}
+  </main>
+</div>

@@ -1,0 +1,99 @@
+<!-- Modelo 2 – Sidebar Azul (ajustado) -->
+<div class="cv m2">
+  <aside class="left">
+    <div class="photo">
+      {{#if photo}}<img src="{{photo}}" alt="Foto">{{/if}}
+    </div>
+
+    <section>
+      <h3>CONTATO</h3>
+      {{#if links}}<p>{{links}}</p>{{/if}}
+      {{#if telefone}}<p>{{telefone}}</p>{{/if}}
+      {{#if email}}<p>{{email}}</p>{{/if}}
+      {{#if local}}<p>{{local}}</p>{{/if}}
+    </section>
+
+    {{#if skills}}
+    <section>
+      <h3>HABILIDADES & COMPETÊNCIAS</h3>
+      <p class="multiline">{{skills}}</p>
+    </section>
+    {{/if}}
+
+    {{#if idiomas}}
+    <section>
+      <h3>IDIOMAS</h3>
+      <p class="multiline">{{idiomas}}</p>
+    </section>
+    {{/if}}
+
+    {{#if cursos}}
+    <section>
+      <h3>CURSOS</h3>
+      <p class="multiline">{{cursos}}</p>
+    </section>
+    {{/if}}
+  </aside>
+
+  <main class="right">
+    <!-- header sempre no topo -->
+    <header class="title">
+      <h1>{{nome}}</h1>
+      {{#if titulo}}<div class="role">{{titulo}}</div>{{/if}}
+    </header>
+
+    {{#if resumo}}
+    <section class="block">
+      <h2>RESUMO</h2>
+      <p>{{resumo}}</p>
+    </section>
+    {{/if}}
+
+    {{#if experiencias.length}}
+    <section class="block">
+      <h2>EXPERIÊNCIA PROFISSIONAL</h2>
+      {{#each experiencias}}
+      <article class="xp">
+        <div class="line1">
+          <strong>{{cargo}}</strong> — {{empresa}}
+          <small>({{inicio}} {{#if fim}}– {{fim}}{{/if}})</small>
+        </div>
+        <ul class="bullets">
+          {{#each (splitLines descricao)}}{{#if this}}<li>{{this}}</li>{{/if}}{{/each}}
+        </ul>
+      </article>
+      {{/each}}
+    </section>
+    {{/if}}
+
+    {{#if educacao.length}}
+    <section class="block">
+      <h2>FORMAÇÃO ACADÊMICA</h2>
+      {{#each educacao}}
+        <p><strong>{{curso}}</strong> — {{instituicao}} <small>({{inicio}}–{{fim}})</small></p>
+      {{/each}}
+    </section>
+    {{/if}}
+
+    {{#if softwares}}
+    <section class="block">
+      <h2>SOFTWARES</h2>
+      <p class="multiline">{{softwares}}</p>
+    </section>
+    {{/if}}
+
+    {{#if atividades}}
+    <section class="block">
+      <h2>ATIVIDADES</h2>
+      <p class="multiline">{{atividades}}</p>
+    </section>
+    {{/if}}
+
+    {{#if infoExtra}}
+    <section class="block">
+      <h2>INFORMAÇÕES COMPLEMENTARES</h2>
+      <p class="multiline">{{infoExtra}}</p>
+    </section>
+    {{/if}}
+  </main>
+</div>

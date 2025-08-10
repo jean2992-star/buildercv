@@ -1,0 +1,54 @@
+/* Modelo 1 – Clássico Preto (com espaçamento do PDF) */
+.cv.m1{
+  /* escala de espaçamento */
+  --page-pad: 30px;
+  --section-gap: 24px;
+  --block-gap: 16px;
+  --para-gap: 10px;
+  --bullet-gap: 8px;
+  --line-h: 1.55;
+
+  font-family: Inter, Arial, sans-serif;
+  color:#111; background:#fff;
+  max-width: 800px; margin: 0 auto;
+  border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;
+  padding: var(--page-pad);
+  line-height: var(--line-h);
+}
+
+.cv.m1 .head{
+  border-left:10px solid #111;
+  padding-left:14px;
+  margin-bottom: var(--block-gap);
+}
+.cv.m1 h1{ margin:0; font-size:40px; letter-spacing:.5px }
+.cv.m1 .role{ margin:6px 0 12px; color:#374151; font-weight:700 }
+
+.cv.m1 .contact{
+  margin-top:10px; padding:10px 0;
+  border-top:2px solid #111; border-bottom:2px solid #111;
+  display:flex; gap:18px; flex-wrap:wrap; font-weight:500
+}
+
+/* Seções / títulos */
+.cv.m1 .block{ margin-top: var(--section-gap); }
+.cv.m1 h2{
+  margin:0 0 10px; font-size:18px; letter-spacing:.6px;
+  text-transform:uppercase; color:#111;
+  border-bottom:1px solid #e5e7eb; padding-bottom:6px;
+}
+
+/* Texto e listas */
+.cv.m1 p{ margin:0 0 var(--para-gap); }
+.cv.m1 .edu{ margin:10px 0; }
+
+.cv.m1 .xp{ margin:14px 0 18px; }
+.cv.m1 .xp .line1{ font-weight:700; margin-bottom:4px; }
+.cv.m1 .xp .period{ color:#6b7280; margin:2px 0 8px; }
+.cv.m1 .bullets{ margin:6px 0 0; padding-left:18px; }
+.cv.m1 .bullets li{ margin:0 0 var(--bullet-gap); }
+
+/* Projetos */
+.cv.m1 .list{ margin:0; padding-left:18px; }
+.cv.m1 .list li{ margin:0 0 var(--bullet-gap); }
+.cv .multiline { white-space: pre-line; }
