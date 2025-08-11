@@ -1,4 +1,4 @@
-# buildercv.github.io
+# jean2992-star.github.io/buildercv
 Gerador de Currículos com Otimizador ATS 
 
 Aplicação web que permite criar currículos em múltiplos modelos prontos, inserir foto, exportar em PDF e analisar compatibilidade com descrições de vagas usando um Otimizador ATS integrado. Totalmente responsivo, com salvamento de rascunho e personalização de informações.
