@@ -449,9 +449,7 @@ function ClassicTemplate({ data }) {
                 <p style={{ fontStyle: "italic", fontSize: 20 }}>{exp.empresa}</p>
               </div>
               <div style={{ textAlign: "right" }}>
-                <p style={{ fontWeight: 700, fontSize: 18 }}>
-                  {exp.inicio} — {exp.fim}
-                </p>
+                <p style={{ fontWeight: 700, fontSize: 18 }}>{exp.inicio} — {exp.fim}</p>
                 <p>{exp.local}</p>
               </div>
             </div>
@@ -481,9 +479,7 @@ function ClassicTemplate({ data }) {
                 <p style={{ fontStyle: "italic", fontSize: 20 }}>{form.instituicao}</p>
               </div>
               <div style={{ textAlign: "right" }}>
-                <p style={{ fontWeight: 700, fontSize: 18 }}>
-                  {form.inicio} — {form.fim}
-                </p>
+                <p style={{ fontWeight: 700, fontSize: 18 }}>{form.inicio} — {form.fim}</p>
                 <p>{form.local}</p>
               </div>
             </div>
@@ -552,14 +548,7 @@ function ElegantTemplate({ data }) {
         </ElegantSection>
 
         <ElegantSection title="Habilidades">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 12,
-              fontSize: 17,
-            }}
-          >
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, fontSize: 17 }}>
             {data.habilidades.map((hab, index) => (
               <div
                 key={index}
@@ -711,14 +700,7 @@ function MinimalTemplate({ data }) {
         <div className="minimal-content">
           <div style={{ display: "grid", gap: 24 }}>
             {data.experiencias.map((exp, index) => (
-              <div
-                key={index}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "150px 1fr 90px",
-                  gap: 16,
-                }}
-              >
+              <div key={index} style={{ display: "grid", gridTemplateColumns: "150px 1fr 90px", gap: 16 }}>
                 <div>{exp.inicio} — {exp.fim}</div>
                 <div>
                   <p style={{ fontSize: 22, fontWeight: 700 }}>
@@ -740,14 +722,7 @@ function MinimalTemplate({ data }) {
         <div className="minimal-content">
           <div style={{ display: "grid", gap: 18 }}>
             {data.formacoes.map((form, index) => (
-              <div
-                key={index}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "150px 1fr 90px",
-                  gap: 16,
-                }}
-              >
+              <div key={index} style={{ display: "grid", gridTemplateColumns: "150px 1fr 90px", gap: 16 }}>
                 <div>{form.inicio} — {form.fim}</div>
                 <div>
                   <p style={{ fontSize: 22, fontWeight: 700 }}>
@@ -798,21 +773,8 @@ function MinimalTemplate({ data }) {
 function ElegantSection({ title, children }) {
   return (
     <section>
-      <div
-        style={{
-          width: 170,
-          borderTop: "2px solid #d4d4d4",
-          marginBottom: 14,
-        }}
-      />
-      <h3
-        style={{
-          fontSize: 34,
-          color: "#2c5ea2",
-          fontWeight: 700,
-          marginBottom: 14,
-        }}
-      >
+      <div style={{ width: 170, borderTop: "2px solid #d4d4d4", marginBottom: 14 }} />
+      <h3 style={{ fontSize: 34, color: "#2c5ea2", fontWeight: 700, marginBottom: 14 }}>
         {title}
       </h3>
       {children}
@@ -888,13 +850,7 @@ function ModernSection({ icon, title, children }) {
 function ResumePreview({ template, data, previewRef }) {
   return (
     <div className="preview-container" style={{ background: "#eceff3" }}>
-      <div
-        style={{
-          transformOrigin: "top center",
-          width: "fit-content",
-          margin: "0 auto",
-        }}
-      >
+      <div style={{ transformOrigin: "top center", width: "fit-content", margin: "0 auto" }}>
         <div ref={previewRef}>
           {template === "classic" && <ClassicTemplate data={data} />}
           {template === "elegant" && <ElegantTemplate data={data} />}
@@ -1319,16 +1275,12 @@ export default function App() {
                     <TextInput
                       label={t.nameShort}
                       value={item.nome}
-                      onChange={(e) =>
-                        updateListItem(setData, "habilidades", index, "nome", e.target.value)
-                      }
+                      onChange={(e) => updateListItem(setData, "habilidades", index, "nome", e.target.value)}
                     />
                     <SelectInput
                       label={t.level}
                       value={item.nivel}
-                      onChange={(e) =>
-                        updateListItem(setData, "habilidades", index, "nivel", e.target.value)
-                      }
+                      onChange={(e) => updateListItem(setData, "habilidades", index, "nivel", e.target.value)}
                       options={["Básico", "Intermediário", "Avançado", "Especialista"]}
                     />
                   </ItemBox>
@@ -1357,20 +1309,8 @@ export default function App() {
                     title={`${t.languageItem} ${index + 1}`}
                     onRemove={() => removeListItem(setData, "idiomas", index)}
                   >
-                    <TextInput
-                      label={t.language}
-                      value={item.nome}
-                      onChange={(e) =>
-                        updateListItem(setData, "idiomas", index, "nome", e.target.value)
-                      }
-                    />
-                    <TextInput
-                      label={t.level}
-                      value={item.nivel}
-                      onChange={(e) =>
-                        updateListItem(setData, "idiomas", index, "nivel", e.target.value)
-                      }
-                    />
+                    <TextInput label={t.language} value={item.nome} onChange={(e) => updateListItem(setData, "idiomas", index, "nome", e.target.value)} />
+                    <TextInput label={t.level} value={item.nivel} onChange={(e) => updateListItem(setData, "idiomas", index, "nivel", e.target.value)} />
                   </ItemBox>
                 ))}
 
@@ -1463,10 +1403,9 @@ export default function App() {
                     <TextInput
                       label={t.nameShort}
                       value={item.nome}
-                      onChange={(e) =>
-                        updateListItem(setData, "referencias", index, "nome", e.target.value)
-                      }
+                      onChange={(e) => updateListItem(setData, "referencias", index, "nome", e.target.value)}
                     />
+                    <TextInput label={t.company} value={item.empresa} onChange={(e) => updateListItem(setData, "referencias", index, "empresa", e.target.value)} />
                     <TextInput
                       label={t.company}
                       value={item.empresa}
@@ -1477,9 +1416,7 @@ export default function App() {
                     <TextInput
                       label={t.contactShort}
                       value={item.contato}
-                      onChange={(e) =>
-                        updateListItem(setData, "referencias", index, "contato", e.target.value)
-                      }
+                      onChange={(e) => updateListItem(setData, "referencias", index, "contato", e.target.value)}
                     />
                   </ItemBox>
                 ))}
