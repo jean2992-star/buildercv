@@ -1,0 +1,206 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f6f9;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CONTAINER PRINCIPAL */
+
+.app-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 30px;
+}
+
+/* HEADER */
+
+.header {
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.header p {
+  color: #666;
+  margin-top: 5px;
+}
+
+h1,h2,h3,h4{
+  font-family: "Inter", system-ui;
+  letter-spacing: -0.02em;
+}
+
+/* LAYOUT */
+
+.layout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 30px;
+}
+
+/* FORMULÁRIO */
+
+.form-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* BOTÕES */
+
+.button {
+  padding: 12px 18px;
+  border: none;
+  background: #2c6bed;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background: #1e4fb5;
+}
+
+/* PREVIEW */
+
+.preview-container {
+  background: #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+/* CURRICULO */
+
+.cv-page {
+  background: white;
+  width: 794px;
+  min-height: 1123px;
+  margin: auto;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* HEADER CV */
+
+.cv-header {
+  text-align: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.cv-header h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.cv-header p {
+  margin-top: 5px;
+  color: #555;
+}
+
+/* SECTIONS */
+
+.cv-section {
+  margin-bottom: 25px;
+}
+
+.cv-section h3 {
+  font-size: 18px;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.cv-section ul {
+  padding-left: 20px;
+}
+
+.cv-section li {
+  margin-bottom: 5px;
+}
+
+/* EXPERIÊNCIA */
+
+.job {
+  margin-bottom: 15px;
+}
+
+.job-title {
+  font-weight: bold;
+}
+
+.job-company {
+  font-style: italic;
+  color: #555;
+}
+
+/* SKILLS */
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.skill {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 1000px) {
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-container {
+    overflow-x: scroll;
+  }
+
+}
