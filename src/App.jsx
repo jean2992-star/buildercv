@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   Download,
   FileText,
@@ -15,6 +15,186 @@ import { motion } from "framer-motion";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import "./App.css";
+
+import "./templates/classic.css";
+import "./templates/elegant.css";
+import "./templates/modern.css";
+import "./templates/minimal.css";
+
+import "./templates/New_temp1.css";
+import "./templates/New_temp2.css";
+import "./templates/New_temp3.css";
+import "./templates/New_temp4.css";
+import "./templates/New_temp5.css";
+import "./templates/New_temp6.css";
+import "./templates/New_temp7.css";
+
+import NewTemp1 from "./templates/New_temp1";
+import NewTemp2 from "./templates/New_temp2";
+import NewTemp3 from "./templates/New_temp3";
+import NewTemp4 from "./templates/New_temp4";
+import NewTemp5 from "./templates/New_temp5";
+import NewTemp6 from "./templates/New_temp6";
+import NewTemp7 from "./templates/New_temp7";
+
+const translations = {
+  pt: {
+    badge: "Gerador Profissional de Currículo",
+    title: "Crie currículos rápidos, bonitos e personalizados",
+    desc: "Escolha um template inspirado em modelos premium, preencha os dados e baixe o currículo em PDF com um clique.",
+    download: "Baixar PDF",
+    template: "Template",
+    basic: "Básico",
+    experience: "Experiência",
+    education: "Formação",
+    extras: "Extras",
+    fullName: "Nome completo",
+    role: "Cargo / título profissional",
+    email: "E-mail",
+    phone: "Telefone",
+    city: "Cidade",
+    state: "Estado",
+    address: "Endereço",
+    linkedin: "LinkedIn ou portfólio",
+    summary: "Resumo profissional",
+    addExperience: "Adicionar experiência",
+    addEducation: "Adicionar formação",
+    addSkill: "Adicionar habilidade",
+    addLanguage: "Adicionar idioma",
+    addCourse: "Adicionar curso",
+    addReference: "Adicionar referência",
+    preview: "Preview em tempo real",
+    selectedTemplate: "Template selecionado",
+    skills: "Habilidades",
+    languages: "Idiomas",
+    courses: "Cursos",
+    references: "Referências",
+    courseName: "Nome do curso",
+    institution: "Instituição",
+    period: "Período",
+    level: "Nível",
+    language: "Idioma",
+    details: "Detalhes",
+    start: "Início",
+    end: "Fim",
+    company: "Empresa",
+    location: "Local",
+    activities: "Atividades (uma por linha)",
+    experienceItem: "Experiência",
+    educationItem: "Formação",
+    skillItem: "Habilidade",
+    languageItem: "Idioma",
+    courseItem: "Curso",
+    referenceItem: "Referência",
+    templateHelp: "Layout profissional pronto para personalização.",
+    nameShort: "Nome",
+    contactShort: "Contato",
+  },
+  en: {
+    badge: "Professional Resume Builder",
+    title: "Create fast, beautiful and personalized resumes",
+    desc: "Choose a premium-inspired template, fill in the data and download the resume as PDF in one click.",
+    download: "Download PDF",
+    template: "Template",
+    basic: "Basic",
+    experience: "Experience",
+    education: "Education",
+    extras: "Extras",
+    fullName: "Full name",
+    role: "Job title / professional title",
+    email: "Email",
+    phone: "Phone",
+    city: "City",
+    state: "State",
+    address: "Address",
+    linkedin: "LinkedIn or portfolio",
+    summary: "Professional summary",
+    addExperience: "Add experience",
+    addEducation: "Add education",
+    addSkill: "Add skill",
+    addLanguage: "Add language",
+    addCourse: "Add course",
+    addReference: "Add reference",
+    preview: "Live preview",
+    selectedTemplate: "Selected template",
+    skills: "Skills",
+    languages: "Languages",
+    courses: "Courses",
+    references: "References",
+    courseName: "Course name",
+    institution: "Institution",
+    period: "Period",
+    level: "Level",
+    language: "Language",
+    details: "Details",
+    start: "Start",
+    end: "End",
+    company: "Company",
+    location: "Location",
+    activities: "Activities (one per line)",
+    experienceItem: "Experience",
+    educationItem: "Education",
+    skillItem: "Skill",
+    languageItem: "Language",
+    courseItem: "Course",
+    referenceItem: "Reference",
+    templateHelp: "Professional layout ready for customization.",
+    nameShort: "Name",
+    contactShort: "Contact",
+  },
+  es: {
+    badge: "Generador Profesional de Currículum",
+    title: "Crea currículums rápidos, bonitos y personalizados",
+    desc: "Elige una plantilla inspirada en modelos premium, completa los datos y descarga el currículum en PDF con un clic.",
+    download: "Descargar PDF",
+    template: "Plantilla",
+    basic: "Básico",
+    experience: "Experiencia",
+    education: "Formación",
+    extras: "Extras",
+    fullName: "Nombre completo",
+    role: "Cargo / título profesional",
+    email: "Correo electrónico",
+    phone: "Teléfono",
+    city: "Ciudad",
+    state: "Estado",
+    address: "Dirección",
+    linkedin: "LinkedIn o portafolio",
+    summary: "Resumen profesional",
+    addExperience: "Agregar experiencia",
+    addEducation: "Agregar formación",
+    addSkill: "Agregar habilidad",
+    addLanguage: "Agregar idioma",
+    addCourse: "Agregar curso",
+    addReference: "Agregar referencia",
+    preview: "Vista previa en tiempo real",
+    selectedTemplate: "Plantilla seleccionada",
+    skills: "Habilidades",
+    languages: "Idiomas",
+    courses: "Cursos",
+    references: "Referencias",
+    courseName: "Nombre del curso",
+    institution: "Institución",
+    period: "Período",
+    level: "Nivel",
+    language: "Idioma",
+    details: "Detalles",
+    start: "Inicio",
+    end: "Fin",
+    company: "Empresa",
+    location: "Lugar",
+    activities: "Actividades (una por línea)",
+    experienceItem: "Experiencia",
+    educationItem: "Formación",
+    skillItem: "Habilidad",
+    languageItem: "Idioma",
+    courseItem: "Curso",
+    referenceItem: "Referencia",
+    templateHelp: "Diseño profesional listo para personalizar.",
+    nameShort: "Nombre",
+    contactShort: "Contacto",
+  },
+};
 
 const defaultData = {
   nome: "Seu Nome Completo",
@@ -81,6 +261,13 @@ const templates = [
   { id: "elegant", nome: "Elegante Azul" },
   { id: "modern", nome: "Moderno Verde" },
   { id: "minimal", nome: "Minimalista Profissional" },
+  { id: "new1", nome: "Professional Modern" },
+  { id: "new2", nome: "Corporate Resume" },
+  { id: "new3", nome: "Creative Designer" },
+  { id: "new4", nome: "Executive Dark" },
+  { id: "new5", nome: "Tech Developer" },
+  { id: "new6", nome: "Clean Minimal" },
+  { id: "new7", nome: "Professional Sidebar" },
 ];
 
 function updateListItem(setData, key, index, field, value) {
@@ -143,12 +330,7 @@ function FormSection({ title, icon, children }) {
   return (
     <div className="form-card">
       <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 10,
-          marginBottom: 18,
-        }}
+        style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}
       >
         {icon}
         <h3 style={{ fontSize: 20, fontWeight: 700 }}>{title}</h3>
@@ -158,20 +340,30 @@ function FormSection({ title, icon, children }) {
   );
 }
 
-function TextInput({ label, value, onChange, placeholder = "" }) {
+function TextInput({ label, value, onChange, placeholder = "", type = "text" }) {
   return (
     <div className="form-group">
       <label>{label}</label>
-      <input value={value} onChange={onChange} placeholder={placeholder} />
+      <input
+        type={type}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+      />
     </div>
   );
 }
 
-function TextAreaInput({ label, value, onChange, rows = 4 }) {
+function TextAreaInput({ label, value, onChange, rows = 4, placeholder = "" }) {
   return (
     <div className="form-group">
       <label>{label}</label>
-      <textarea rows={rows} value={value} onChange={onChange} />
+      <textarea
+        rows={rows}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+      />
     </div>
   );
 }
@@ -219,6 +411,7 @@ function ItemBox({ title, onRemove, children }) {
             color: "#222",
             padding: "8px 12px",
             marginTop: 0,
+            boxShadow: "none",
           }}
           onClick={onRemove}
         >
@@ -232,55 +425,25 @@ function ItemBox({ title, onRemove, children }) {
 
 function ClassicTemplate({ data }) {
   return (
-    <div
-      className="cv-page"
-      style={{
-        fontFamily: "Georgia, 'Times New Roman', serif",
-        color: "#222",
-        padding: 48,
-      }}
-    >
-      <div
-        style={{
-          borderTop: "4px solid #777",
-          borderBottom: "1px solid #aaa",
-          textAlign: "center",
-          paddingTop: 14,
-          paddingBottom: 10,
-        }}
-      >
-        <p style={{ fontSize: 13, textTransform: "uppercase", letterSpacing: 1 }}>
+    <div className="cv-page classic">
+      <div className="classic-header">
+        <p>
           {data.cidade}, {data.estado} • {data.email} • {data.telefone}
         </p>
-        <h1
-          style={{
-            fontSize: 42,
-            fontWeight: 900,
-            textTransform: "uppercase",
-            marginTop: 12,
-          }}
-        >
-          {data.nome}
-        </h1>
-        <p style={{ fontStyle: "italic", marginTop: 8, fontSize: 18 }}>
-          {data.cargo}
-        </p>
+        <h1>{data.nome}</h1>
+        <p>{data.cargo}</p>
       </div>
 
-      <CvBlockTitle>Resumo Profissional</CvBlockTitle>
-      <p style={{ fontSize: 17, lineHeight: 1.8 }}>{data.resumo}</p>
+      <div className="classic-section">
+        <h3>Resumo Profissional</h3>
+        <p>{data.resumo}</p>
+      </div>
 
-      <CvBlockTitle>Experiência Profissional</CvBlockTitle>
-      <div style={{ display: "grid", gap: 24 }}>
+      <div className="classic-section">
+        <h3>Experiência Profissional</h3>
         {data.experiencias.map((exp, index) => (
-          <div key={index}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: 16,
-              }}
-            >
+          <div key={index} className="classic-job">
+            <div style={{ display: "flex", justifyContent: "space-between", gap: 16 }}>
               <div>
                 <h4 style={{ fontSize: 24, fontWeight: 700 }}>{exp.cargo}</h4>
                 <p style={{ fontStyle: "italic", fontSize: 20 }}>{exp.empresa}</p>
@@ -293,38 +456,29 @@ function ClassicTemplate({ data }) {
               </div>
             </div>
             <ul style={{ marginTop: 12, paddingLeft: 24, lineHeight: 1.8 }}>
-              {exp.atividades
-                .split("\n")
-                .filter(Boolean)
-                .map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
+              {exp.atividades.split("\n").filter(Boolean).map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
             </ul>
           </div>
         ))}
       </div>
 
-      <CvBlockTitle>Idiomas</CvBlockTitle>
-      <p style={{ fontSize: 17, lineHeight: 1.8 }}>
-        {data.idiomas.map((idioma) => `${idioma.nome} (${idioma.nivel})`).join(", ")}.
-      </p>
+      <div className="classic-section">
+        <h3>Idiomas</h3>
+        <p>
+          {data.idiomas.map((idioma) => `${idioma.nome} (${idioma.nivel})`).join(", ")}.
+        </p>
+      </div>
 
-      <CvBlockTitle>Formação</CvBlockTitle>
-      <div style={{ display: "grid", gap: 20 }}>
+      <div className="classic-section">
+        <h3>Formação</h3>
         {data.formacoes.map((form, index) => (
-          <div key={index}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: 16,
-              }}
-            >
+          <div key={index} className="classic-job">
+            <div style={{ display: "flex", justifyContent: "space-between", gap: 16 }}>
               <div>
                 <h4 style={{ fontSize: 24, fontWeight: 700 }}>{form.curso}</h4>
-                <p style={{ fontStyle: "italic", fontSize: 20 }}>
-                  {form.instituicao}
-                </p>
+                <p style={{ fontStyle: "italic", fontSize: 20 }}>{form.instituicao}</p>
               </div>
               <div style={{ textAlign: "right" }}>
                 <p style={{ fontWeight: 700, fontSize: 18 }}>
@@ -338,73 +492,46 @@ function ClassicTemplate({ data }) {
         ))}
       </div>
 
-      <CvBlockTitle>Habilidades</CvBlockTitle>
-      <p style={{ fontSize: 17, lineHeight: 1.8 }}>
-        {data.habilidades.map((hab) => `${hab.nome} (${hab.nivel})`).join(", ")}.
-      </p>
+      <div className="classic-section">
+        <h3>Habilidades</h3>
+        <p>
+          {data.habilidades.map((hab) => `${hab.nome} (${hab.nivel})`).join(", ")}.
+        </p>
+      </div>
     </div>
   );
 }
 
 function ElegantTemplate({ data }) {
   return (
-    <div
-      className="cv-page"
-      style={{
-        padding: 0,
-        background: "#f8f8f7",
-        color: "#242424",
-        fontFamily: "Georgia, 'Times New Roman', serif",
-      }}
-    >
-      <div
-        style={{
-          background: "#234f88",
-          color: "#fff",
-          padding: "48px 56px 42px",
-          textAlign: "center",
-        }}
-      >
-        <div
-          style={{
-            width: 180,
-            borderTop: "1px solid rgba(255,255,255,.7)",
-            margin: "0 auto 24px",
-          }}
-        />
-        <h1 style={{ fontSize: 46, fontWeight: 700 }}>{data.nome}</h1>
-        <p style={{ fontSize: 28, fontWeight: 600, marginTop: 12 }}>{data.cargo}</p>
-        <p style={{ fontSize: 15, marginTop: 18, lineHeight: 1.8 }}>
+    <div className="cv-page elegant">
+      <div className="elegant-header">
+        <h1>{data.nome}</h1>
+        <p>{data.cargo}</p>
+        <p>
           {data.endereco}, {data.cidade}, {data.estado} • {data.telefone} • {data.email}
         </p>
       </div>
 
-      <div style={{ padding: "40px 56px", display: "grid", gap: 34 }}>
+      <div className="elegant-section">
         <ElegantSection title="Resumo">
-          <p style={{ fontSize: 17, lineHeight: 1.8 }}>{data.resumo}</p>
+          <p>{data.resumo}</p>
         </ElegantSection>
 
         <ElegantSection title="Experiência Profissional">
           <div style={{ display: "grid", gap: 24 }}>
             {data.experiencias.map((exp, index) => (
-              <div key={index}>
+              <div key={index} className="elegant-job">
                 <p style={{ fontSize: 24, fontWeight: 700 }}>
-                  {exp.cargo}{" "}
-                  <span style={{ fontWeight: 400 }}>
-                    {exp.inicio} — {exp.fim}
-                  </span>
+                  {exp.cargo} <span style={{ fontWeight: 400 }}>{exp.inicio} — {exp.fim}</span>
                 </p>
                 <p style={{ fontSize: 22, fontWeight: 700, marginTop: 6 }}>
-                  {exp.empresa}{" "}
-                  <span style={{ fontWeight: 400 }}>— {exp.local}</span>
+                  {exp.empresa} <span style={{ fontWeight: 400 }}>— {exp.local}</span>
                 </p>
                 <ul style={{ marginTop: 12, paddingLeft: 22, lineHeight: 1.8 }}>
-                  {exp.atividades
-                    .split("\n")
-                    .filter(Boolean)
-                    .map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
+                  {exp.atividades.split("\n").filter(Boolean).map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
                 </ul>
               </div>
             ))}
@@ -457,28 +584,12 @@ function ElegantTemplate({ data }) {
 
 function ModernTemplate({ data }) {
   return (
-    <div
-      className="cv-page"
-      style={{
-        background: "#f6f7f4",
-        color: "#1f1f1f",
-        padding: 40,
-        fontFamily: "Arial, Helvetica, sans-serif",
-      }}
-    >
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "240px 1fr",
-          gap: 36,
-        }}
-      >
-        <aside>
+    <div className="cv-page modern">
+      <div className="modern-container">
+        <aside className="modern-sidebar">
           <SidebarTitle icon={<User size={20} />} title="Contatos" />
           <div style={{ lineHeight: 1.7, marginBottom: 28 }}>
-            <p>
-              {data.endereco}, {data.cidade}, {data.estado}
-            </p>
+            <p>{data.endereco}, {data.cidade}, {data.estado}</p>
             <p>{data.telefone}</p>
             <p style={{ wordBreak: "break-word" }}>{data.email}</p>
             <p style={{ wordBreak: "break-word" }}>{data.linkedin}</p>
@@ -499,100 +610,83 @@ function ModernTemplate({ data }) {
               <div key={index}>
                 <p style={{ fontWeight: 700 }}>{curso.nome}</p>
                 <p>{curso.instituicao}</p>
-                <p>
-                  {curso.periodo} • {curso.local}
-                </p>
+                <p>{curso.periodo} • {curso.local}</p>
               </div>
             ))}
           </div>
         </aside>
 
-        <main>
-          <h1 style={{ fontSize: 46, fontWeight: 900 }}>{data.nome}</h1>
-          <div
-            style={{
-              marginTop: 16,
-              background: "#9bc5aa",
-              borderRadius: 16,
-              padding: "12px 16px",
-              fontSize: 28,
-              fontWeight: 700,
-              color: "#38544c",
-            }}
-          >
-            {data.cargo}
+        <main className="modern-main">
+          <h1 className="modern-title">{data.nome}</h1>
+          <div className="modern-role">{data.cargo}</div>
+
+          <div className="modern-section">
+            <ModernSection icon={<FileText size={20} />} title="Resumo">
+              <p style={{ lineHeight: 1.8 }}>{data.resumo}</p>
+            </ModernSection>
           </div>
 
-          <ModernSection icon={<FileText size={20} />} title="Resumo">
-            <p style={{ lineHeight: 1.8 }}>{data.resumo}</p>
-          </ModernSection>
-
-          <ModernSection icon={<Briefcase size={20} />} title="Experiência">
-            <div style={{ display: "grid", gap: 24 }}>
-              {data.experiencias.map((exp, index) => (
-                <div key={index}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      gap: 16,
-                    }}
-                  >
-                    <div>
-                      <p style={{ fontSize: 22, fontWeight: 700 }}>{exp.empresa}</p>
-                      <p style={{ fontSize: 22 }}>{exp.cargo}</p>
+          <div className="modern-section">
+            <ModernSection icon={<Briefcase size={20} />} title="Experiência">
+              <div style={{ display: "grid", gap: 24 }}>
+                {data.experiencias.map((exp, index) => (
+                  <div key={index}>
+                    <div
+                      style={{ display: "flex", justifyContent: "space-between", gap: 16 }}
+                    >
+                      <div>
+                        <p style={{ fontSize: 22, fontWeight: 700 }}>{exp.empresa}</p>
+                        <p style={{ fontSize: 22 }}>{exp.cargo}</p>
+                      </div>
+                      <div style={{ textAlign: "right", color: "#666" }}>
+                        <p>{exp.local}</p>
+                        <p>{exp.inicio} — {exp.fim}</p>
+                      </div>
                     </div>
-                    <div style={{ textAlign: "right", color: "#666" }}>
-                      <p>{exp.local}</p>
-                      <p>
-                        {exp.inicio} — {exp.fim}
-                      </p>
-                    </div>
-                  </div>
-                  <ul style={{ marginTop: 12, paddingLeft: 22, lineHeight: 1.8 }}>
-                    {exp.atividades
-                      .split("\n")
-                      .filter(Boolean)
-                      .map((item, i) => (
+                    <ul style={{ marginTop: 12, paddingLeft: 22, lineHeight: 1.8 }}>
+                      {exp.atividades.split("\n").filter(Boolean).map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </ModernSection>
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </ModernSection>
+          </div>
 
-          <ModernSection icon={<GraduationCap size={20} />} title="Formação">
-            <div style={{ display: "grid", gap: 16 }}>
-              {data.formacoes.map((form, index) => (
-                <div key={index}>
-                  <p style={{ color: "#666" }}>
-                    {form.inicio} — {form.fim}
-                  </p>
-                  <p style={{ fontSize: 22, fontWeight: 700 }}>
-                    {form.curso}{" "}
-                    <span style={{ fontWeight: 400, color: "#666" }}>
-                      | {form.instituicao}
-                    </span>
-                  </p>
-                  <p style={{ marginTop: 6, lineHeight: 1.8 }}>{form.detalhes}</p>
-                </div>
-              ))}
-            </div>
-          </ModernSection>
+          <div className="modern-section">
+            <ModernSection icon={<GraduationCap size={20} />} title="Formação">
+              <div style={{ display: "grid", gap: 16 }}>
+                {data.formacoes.map((form, index) => (
+                  <div key={index}>
+                    <p style={{ color: "#666" }}>{form.inicio} — {form.fim}</p>
+                    <p style={{ fontSize: 22, fontWeight: 700 }}>
+                      {form.curso}{" "}
+                      <span style={{ fontWeight: 400, color: "#666" }}>
+                        | {form.instituicao}
+                      </span>
+                    </p>
+                    <p style={{ marginTop: 6, lineHeight: 1.8 }}>{form.detalhes}</p>
+                  </div>
+                ))}
+              </div>
+            </ModernSection>
+          </div>
 
-          <ModernSection icon={<Languages size={20} />} title="Referências">
-            <div style={{ display: "grid", gap: 14 }}>
-              {data.referencias.map((ref, index) => (
-                <div key={index}>
-                  <p style={{ fontWeight: 700 }}>
-                    {ref.nome}, {ref.empresa}
-                  </p>
-                  <p>{ref.contato}</p>
-                </div>
-              ))}
-            </div>
-          </ModernSection>
+          <div className="modern-section">
+            <ModernSection icon={<Languages size={20} />} title="Referências">
+              <div style={{ display: "grid", gap: 14 }}>
+                {data.referencias.map((ref, index) => (
+                  <div key={index}>
+                    <p style={{ fontWeight: 700 }}>
+                      {ref.nome}, {ref.empresa}
+                    </p>
+                    <p>{ref.contato}</p>
+                  </div>
+                ))}
+              </div>
+            </ModernSection>
+          </div>
         </main>
       </div>
     </div>
@@ -601,44 +695,20 @@ function ModernTemplate({ data }) {
 
 function MinimalTemplate({ data }) {
   return (
-    <div
-      className="cv-page"
-      style={{
-        fontFamily: "Georgia, 'Times New Roman', serif",
-        color: "#222",
-        padding: 56,
-      }}
-    >
-      <div
-        style={{
-          textAlign: "center",
-          borderBottom: "2px solid #222",
-          paddingBottom: 20,
-        }}
-      >
-        <h1 style={{ fontSize: 40, fontWeight: 700 }}>
-          {data.nome}, {data.cargo}
-        </h1>
-        <p style={{ marginTop: 12, lineHeight: 1.8 }}>
+    <div className="cv-page minimal">
+      <div className="minimal-header">
+        <h1>{data.nome}, {data.cargo}</h1>
+        <p>
           {data.endereco}, {data.cidade}, {data.estado}, {data.telefone}, {data.email}
         </p>
       </div>
 
-      <div
-        style={{
-          marginTop: 24,
-          display: "grid",
-          gridTemplateColumns: "180px 1fr",
-          gap: "26px 28px",
-          fontSize: 17,
-          lineHeight: 1.8,
-        }}
-      >
-        <MinimalLabel>Resumo</MinimalLabel>
-        <MinimalContent>{data.resumo}</MinimalContent>
+      <div className="minimal-grid">
+        <div className="minimal-label">Resumo</div>
+        <div className="minimal-content">{data.resumo}</div>
 
-        <MinimalLabel>Experiência</MinimalLabel>
-        <MinimalContent>
+        <div className="minimal-label">Experiência</div>
+        <div className="minimal-content">
           <div style={{ display: "grid", gap: 24 }}>
             {data.experiencias.map((exp, index) => (
               <div
@@ -649,30 +719,25 @@ function MinimalTemplate({ data }) {
                   gap: 16,
                 }}
               >
-                <div>
-                  {exp.inicio} — {exp.fim}
-                </div>
+                <div>{exp.inicio} — {exp.fim}</div>
                 <div>
                   <p style={{ fontSize: 22, fontWeight: 700 }}>
                     {exp.cargo}, {exp.empresa}
                   </p>
                   <ul style={{ paddingLeft: 20, marginTop: 8 }}>
-                    {exp.atividades
-                      .split("\n")
-                      .filter(Boolean)
-                      .map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
+                    {exp.atividades.split("\n").filter(Boolean).map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
                   </ul>
                 </div>
                 <div style={{ textAlign: "right" }}>{exp.local}</div>
               </div>
             ))}
           </div>
-        </MinimalContent>
+        </div>
 
-        <MinimalLabel>Formação</MinimalLabel>
-        <MinimalContent>
+        <div className="minimal-label">Formação</div>
+        <div className="minimal-content">
           <div style={{ display: "grid", gap: 18 }}>
             {data.formacoes.map((form, index) => (
               <div
@@ -683,9 +748,7 @@ function MinimalTemplate({ data }) {
                   gap: 16,
                 }}
               >
-                <div>
-                  {form.inicio} — {form.fim}
-                </div>
+                <div>{form.inicio} — {form.fim}</div>
                 <div>
                   <p style={{ fontSize: 22, fontWeight: 700 }}>
                     {form.curso}, {form.instituicao}
@@ -696,10 +759,10 @@ function MinimalTemplate({ data }) {
               </div>
             ))}
           </div>
-        </MinimalContent>
+        </div>
 
-        <MinimalLabel>Habilidades</MinimalLabel>
-        <MinimalContent>
+        <div className="minimal-label">Habilidades</div>
+        <div className="minimal-content">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
             {data.habilidades.map((hab, index) => (
               <div
@@ -711,10 +774,10 @@ function MinimalTemplate({ data }) {
               </div>
             ))}
           </div>
-        </MinimalContent>
+        </div>
 
-        <MinimalLabel>Idiomas</MinimalLabel>
-        <MinimalContent>
+        <div className="minimal-label">Idiomas</div>
+        <div className="minimal-content">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
             {data.idiomas.map((item, index) => (
               <div
@@ -726,28 +789,8 @@ function MinimalTemplate({ data }) {
               </div>
             ))}
           </div>
-        </MinimalContent>
+        </div>
       </div>
-    </div>
-  );
-}
-
-function CvBlockTitle({ children }) {
-  return (
-    <div
-      style={{
-        borderTop: "1px solid #aaa",
-        borderBottom: "1px solid #aaa",
-        padding: "8px 0",
-        textAlign: "center",
-        fontWeight: 700,
-        fontSize: 26,
-        textTransform: "uppercase",
-        marginTop: 28,
-        marginBottom: 14,
-      }}
-    >
-      {children}
     </div>
   );
 }
@@ -842,35 +885,6 @@ function ModernSection({ icon, title, children }) {
   );
 }
 
-function MinimalLabel({ children }) {
-  return (
-    <div
-      style={{
-        fontWeight: 700,
-        fontSize: 24,
-        textTransform: "uppercase",
-        borderTop: "2px solid #222",
-        paddingTop: 12,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
-function MinimalContent({ children }) {
-  return (
-    <div
-      style={{
-        borderTop: "2px solid #222",
-        paddingTop: 12,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
 function ResumePreview({ template, data, previewRef }) {
   return (
     <div className="preview-container" style={{ background: "#eceff3" }}>
@@ -886,6 +900,13 @@ function ResumePreview({ template, data, previewRef }) {
           {template === "elegant" && <ElegantTemplate data={data} />}
           {template === "modern" && <ModernTemplate data={data} />}
           {template === "minimal" && <MinimalTemplate data={data} />}
+          {template === "new1" && <NewTemp1 data={data} />}
+          {template === "new2" && <NewTemp2 data={data} />}
+          {template === "new3" && <NewTemp3 data={data} />}
+          {template === "new4" && <NewTemp4 data={data} />}
+          {template === "new5" && <NewTemp5 data={data} />}
+          {template === "new6" && <NewTemp6 data={data} />}
+          {template === "new7" && <NewTemp7 data={data} />}
         </div>
       </div>
     </div>
@@ -896,7 +917,19 @@ export default function App() {
   const [data, setData] = useState(defaultData);
   const [template, setTemplate] = useState("classic");
   const [activeTab, setActiveTab] = useState("basico");
+  const [language, setLanguage] = useState("pt");
   const previewRef = useRef(null);
+
+  const t = translations[language];
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("buildercv_language");
+    if (savedLanguage) setLanguage(savedLanguage);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("buildercv_language", language);
+  }, [language]);
 
   const templateName = useMemo(
     () => templates.find((item) => item.id === template)?.nome || "curriculo",
@@ -921,13 +954,7 @@ export default function App() {
         transition={{ duration: 0.35 }}
       >
         <div className="header" style={{ marginBottom: 24 }}>
-          <div
-            className="form-card"
-            style={{
-              borderRadius: 22,
-              padding: 28,
-            }}
-          >
+          <div className="form-card" style={{ borderRadius: 22, padding: 28 }}>
             <div
               style={{
                 display: "flex",
@@ -949,21 +976,30 @@ export default function App() {
                     marginBottom: 14,
                   }}
                 >
-                  Gerador Profissional de Currículo
+                  {t.badge}
                 </div>
                 <h1 style={{ fontSize: 38, fontWeight: 900, marginBottom: 8 }}>
-                  Crie currículos rapidos, bonitos e personalizados
+                  {t.title}
                 </h1>
-                <p style={{ color: "#666", maxWidth: 760 }}>
-                  Escolha um template inspirado em modelos premium, preencha os
-                  dados e baixe o currículo em PDF com um clique.
-                </p>
+                <p style={{ color: "#666", maxWidth: 760 }}>{t.desc}</p>
               </div>
 
-              <button className="button" onClick={downloadPDF}>
-                <Download size={18} style={{ marginRight: 8 }} />
-                Baixar PDF
-              </button>
+              <div
+                style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}
+              >
+                <div style={{ minWidth: 180 }}>
+                  <select value={language} onChange={(e) => setLanguage(e.target.value)}>
+                    <option value="pt">Português</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                  </select>
+                </div>
+
+                <button className="button" onClick={downloadPDF}>
+                  <Download size={18} style={{ marginRight: 8 }} />
+                  {t.download}
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -971,17 +1007,8 @@ export default function App() {
 
       <div className="layout" style={{ gridTemplateColumns: "520px 1fr" }}>
         <div>
-          <FormSection
-            title="Template"
-            icon={<Palette size={20} color="#111827" />}
-          >
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 12,
-              }}
-            >
+          <FormSection title={t.template} icon={<Palette size={20} color="#111827" />}>
+            <div className="template-grid">
               {templates.map((item) => (
                 <button
                   key={item.id}
@@ -1008,7 +1035,7 @@ export default function App() {
                       color: template === item.id ? "#d1d5db" : "#6b7280",
                     }}
                   >
-                    Layout profissional pronto para personalização.
+                    {t.templateHelp}
                   </p>
                 </button>
               ))}
@@ -1025,10 +1052,10 @@ export default function App() {
               }}
             >
               {[
-                { id: "basico", label: "Básico" },
-                { id: "experiencia", label: "Experiência" },
-                { id: "formacao", label: "Formação" },
-                { id: "extras", label: "Extras" },
+                { id: "basico", label: t.basic },
+                { id: "experiencia", label: t.experience },
+                { id: "formacao", label: t.education },
+                { id: "extras", label: t.extras },
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -1052,47 +1079,47 @@ export default function App() {
             {activeTab === "basico" && (
               <div>
                 <TextInput
-                  label="Nome completo"
+                  label={t.fullName}
                   value={data.nome}
                   onChange={(e) => updateField("nome", e.target.value)}
                 />
                 <TextInput
-                  label="Cargo / título profissional"
+                  label={t.role}
                   value={data.cargo}
                   onChange={(e) => updateField("cargo", e.target.value)}
                 />
                 <TextInput
-                  label="E-mail"
+                  label={t.email}
                   value={data.email}
                   onChange={(e) => updateField("email", e.target.value)}
                 />
                 <TextInput
-                  label="Telefone"
+                  label={t.phone}
                   value={data.telefone}
                   onChange={(e) => updateField("telefone", e.target.value)}
                 />
                 <TextInput
-                  label="Cidade"
+                  label={t.city}
                   value={data.cidade}
                   onChange={(e) => updateField("cidade", e.target.value)}
                 />
                 <TextInput
-                  label="Estado"
+                  label={t.state}
                   value={data.estado}
                   onChange={(e) => updateField("estado", e.target.value)}
                 />
                 <TextInput
-                  label="Endereço"
+                  label={t.address}
                   value={data.endereco}
                   onChange={(e) => updateField("endereco", e.target.value)}
                 />
                 <TextInput
-                  label="LinkedIn ou portfólio"
+                  label={t.linkedin}
                   value={data.linkedin}
                   onChange={(e) => updateField("linkedin", e.target.value)}
                 />
                 <TextAreaInput
-                  label="Resumo profissional"
+                  label={t.summary}
                   rows={6}
                   value={data.resumo}
                   onChange={(e) => updateField("resumo", e.target.value)}
@@ -1118,85 +1145,53 @@ export default function App() {
                     }
                   >
                     <Plus size={18} style={{ marginRight: 8 }} />
-                    Adicionar experiência
+                    {t.addExperience}
                   </button>
                 </div>
 
                 {data.experiencias.map((exp, index) => (
                   <ItemBox
                     key={index}
-                    title={`Experiência ${index + 1}`}
-                    onRemove={() =>
-                      removeListItem(setData, "experiencias", index)
-                    }
+                    title={`${t.experienceItem} ${index + 1}`}
+                    onRemove={() => removeListItem(setData, "experiencias", index)}
                   >
                     <TextInput
-                      label="Cargo"
+                      label={t.role}
                       value={exp.cargo}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "experiencias",
-                          index,
-                          "cargo",
-                          e.target.value
-                        )
+                        updateListItem(setData, "experiencias", index, "cargo", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Empresa"
+                      label={t.company}
                       value={exp.empresa}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "experiencias",
-                          index,
-                          "empresa",
-                          e.target.value
-                        )
+                        updateListItem(setData, "experiencias", index, "empresa", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Local"
+                      label={t.location}
                       value={exp.local}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "experiencias",
-                          index,
-                          "local",
-                          e.target.value
-                        )
+                        updateListItem(setData, "experiencias", index, "local", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Início"
+                      label={t.start}
                       value={exp.inicio}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "experiencias",
-                          index,
-                          "inicio",
-                          e.target.value
-                        )
+                        updateListItem(setData, "experiencias", index, "inicio", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Fim"
+                      label={t.end}
                       value={exp.fim}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "experiencias",
-                          index,
-                          "fim",
-                          e.target.value
-                        )
+                        updateListItem(setData, "experiencias", index, "fim", e.target.value)
                       }
                     />
                     <TextAreaInput
-                      label="Atividades (uma por linha)"
+                      label={t.activities}
                       rows={6}
                       value={exp.atividades}
                       onChange={(e) =>
@@ -1232,31 +1227,25 @@ export default function App() {
                     }
                   >
                     <Plus size={18} style={{ marginRight: 8 }} />
-                    Adicionar formação
+                    {t.addEducation}
                   </button>
                 </div>
 
                 {data.formacoes.map((form, index) => (
                   <ItemBox
                     key={index}
-                    title={`Formação ${index + 1}`}
+                    title={`${t.educationItem} ${index + 1}`}
                     onRemove={() => removeListItem(setData, "formacoes", index)}
                   >
                     <TextInput
-                      label="Curso"
+                      label={t.courseName}
                       value={form.curso}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "formacoes",
-                          index,
-                          "curso",
-                          e.target.value
-                        )
+                        updateListItem(setData, "formacoes", index, "curso", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Instituição"
+                      label={t.institution}
                       value={form.instituicao}
                       onChange={(e) =>
                         updateListItem(
@@ -1269,56 +1258,32 @@ export default function App() {
                       }
                     />
                     <TextInput
-                      label="Local"
+                      label={t.location}
                       value={form.local}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "formacoes",
-                          index,
-                          "local",
-                          e.target.value
-                        )
+                        updateListItem(setData, "formacoes", index, "local", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Início"
+                      label={t.start}
                       value={form.inicio}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "formacoes",
-                          index,
-                          "inicio",
-                          e.target.value
-                        )
+                        updateListItem(setData, "formacoes", index, "inicio", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Fim"
+                      label={t.end}
                       value={form.fim}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "formacoes",
-                          index,
-                          "fim",
-                          e.target.value
-                        )
+                        updateListItem(setData, "formacoes", index, "fim", e.target.value)
                       }
                     />
                     <TextAreaInput
-                      label="Detalhes"
+                      label={t.details}
                       rows={4}
                       value={form.detalhes}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "formacoes",
-                          index,
-                          "detalhes",
-                          e.target.value
-                        )
+                        updateListItem(setData, "formacoes", index, "detalhes", e.target.value)
                       }
                     />
                   </ItemBox>
@@ -1329,7 +1294,7 @@ export default function App() {
             {activeTab === "extras" && (
               <div>
                 <div style={{ marginBottom: 18 }}>
-                  <h3 style={{ fontSize: 18, marginBottom: 10 }}>Habilidades</h3>
+                  <h3 style={{ fontSize: 18, marginBottom: 10 }}>{t.skills}</h3>
                   <button
                     type="button"
                     className="button"
@@ -1341,55 +1306,36 @@ export default function App() {
                     }
                   >
                     <Plus size={18} style={{ marginRight: 8 }} />
-                    Adicionar habilidade
+                    {t.addSkill}
                   </button>
                 </div>
 
                 {data.habilidades.map((item, index) => (
                   <ItemBox
                     key={`hab-${index}`}
-                    title={`Habilidade ${index + 1}`}
-                    onRemove={() =>
-                      removeListItem(setData, "habilidades", index)
-                    }
+                    title={`${t.skillItem} ${index + 1}`}
+                    onRemove={() => removeListItem(setData, "habilidades", index)}
                   >
                     <TextInput
-                      label="Nome"
+                      label={t.nameShort}
                       value={item.nome}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "habilidades",
-                          index,
-                          "nome",
-                          e.target.value
-                        )
+                        updateListItem(setData, "habilidades", index, "nome", e.target.value)
                       }
                     />
                     <SelectInput
-                      label="Nível"
+                      label={t.level}
                       value={item.nivel}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "habilidades",
-                          index,
-                          "nivel",
-                          e.target.value
-                        )
+                        updateListItem(setData, "habilidades", index, "nivel", e.target.value)
                       }
-                      options={[
-                        "Básico",
-                        "Intermediário",
-                        "Avançado",
-                        "Especialista",
-                      ]}
+                      options={["Básico", "Intermediário", "Avançado", "Especialista"]}
                     />
                   </ItemBox>
                 ))}
 
                 <div style={{ marginBottom: 18, marginTop: 28 }}>
-                  <h3 style={{ fontSize: 18, marginBottom: 10 }}>Idiomas</h3>
+                  <h3 style={{ fontSize: 18, marginBottom: 10 }}>{t.languages}</h3>
                   <button
                     type="button"
                     className="button"
@@ -1401,47 +1347,35 @@ export default function App() {
                     }
                   >
                     <Plus size={18} style={{ marginRight: 8 }} />
-                    Adicionar idioma
+                    {t.addLanguage}
                   </button>
                 </div>
 
                 {data.idiomas.map((item, index) => (
                   <ItemBox
                     key={`idioma-${index}`}
-                    title={`Idioma ${index + 1}`}
+                    title={`${t.languageItem} ${index + 1}`}
                     onRemove={() => removeListItem(setData, "idiomas", index)}
                   >
                     <TextInput
-                      label="Idioma"
+                      label={t.language}
                       value={item.nome}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "idiomas",
-                          index,
-                          "nome",
-                          e.target.value
-                        )
+                        updateListItem(setData, "idiomas", index, "nome", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Nível"
+                      label={t.level}
                       value={item.nivel}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "idiomas",
-                          index,
-                          "nivel",
-                          e.target.value
-                        )
+                        updateListItem(setData, "idiomas", index, "nivel", e.target.value)
                       }
                     />
                   </ItemBox>
                 ))}
 
                 <div style={{ marginBottom: 18, marginTop: 28 }}>
-                  <h3 style={{ fontSize: 18, marginBottom: 10 }}>Cursos</h3>
+                  <h3 style={{ fontSize: 18, marginBottom: 10 }}>{t.courses}</h3>
                   <button
                     type="button"
                     className="button"
@@ -1455,31 +1389,25 @@ export default function App() {
                     }
                   >
                     <Plus size={18} style={{ marginRight: 8 }} />
-                    Adicionar curso
+                    {t.addCourse}
                   </button>
                 </div>
 
                 {data.cursos.map((item, index) => (
                   <ItemBox
                     key={`curso-${index}`}
-                    title={`Curso ${index + 1}`}
+                    title={`${t.courseItem} ${index + 1}`}
                     onRemove={() => removeListItem(setData, "cursos", index)}
                   >
                     <TextInput
-                      label="Nome do curso"
+                      label={t.courseName}
                       value={item.nome}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "cursos",
-                          index,
-                          "nome",
-                          e.target.value
-                        )
+                        updateListItem(setData, "cursos", index, "nome", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Instituição"
+                      label={t.institution}
                       value={item.instituicao}
                       onChange={(e) =>
                         updateListItem(
@@ -1492,36 +1420,24 @@ export default function App() {
                       }
                     />
                     <TextInput
-                      label="Período"
+                      label={t.period}
                       value={item.periodo}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "cursos",
-                          index,
-                          "periodo",
-                          e.target.value
-                        )
+                        updateListItem(setData, "cursos", index, "periodo", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Local"
+                      label={t.location}
                       value={item.local}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "cursos",
-                          index,
-                          "local",
-                          e.target.value
-                        )
+                        updateListItem(setData, "cursos", index, "local", e.target.value)
                       }
                     />
                   </ItemBox>
                 ))}
 
                 <div style={{ marginBottom: 18, marginTop: 28 }}>
-                  <h3 style={{ fontSize: 18, marginBottom: 10 }}>Referências</h3>
+                  <h3 style={{ fontSize: 18, marginBottom: 10 }}>{t.references}</h3>
                   <button
                     type="button"
                     className="button"
@@ -1534,55 +1450,35 @@ export default function App() {
                     }
                   >
                     <Plus size={18} style={{ marginRight: 8 }} />
-                    Adicionar referência
+                    {t.addReference}
                   </button>
                 </div>
 
                 {data.referencias.map((item, index) => (
                   <ItemBox
                     key={`ref-${index}`}
-                    title={`Referência ${index + 1}`}
-                    onRemove={() =>
-                      removeListItem(setData, "referencias", index)
-                    }
+                    title={`${t.referenceItem} ${index + 1}`}
+                    onRemove={() => removeListItem(setData, "referencias", index)}
                   >
                     <TextInput
-                      label="Nome"
+                      label={t.nameShort}
                       value={item.nome}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "referencias",
-                          index,
-                          "nome",
-                          e.target.value
-                        )
+                        updateListItem(setData, "referencias", index, "nome", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Empresa"
+                      label={t.company}
                       value={item.empresa}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "referencias",
-                          index,
-                          "empresa",
-                          e.target.value
-                        )
+                        updateListItem(setData, "referencias", index, "empresa", e.target.value)
                       }
                     />
                     <TextInput
-                      label="Contato"
+                      label={t.contactShort}
                       value={item.contato}
                       onChange={(e) =>
-                        updateListItem(
-                          setData,
-                          "referencias",
-                          index,
-                          "contato",
-                          e.target.value
-                        )
+                        updateListItem(setData, "referencias", index, "contato", e.target.value)
                       }
                     />
                   </ItemBox>
@@ -1605,17 +1501,15 @@ export default function App() {
             }}
           >
             <div>
-              <h2 style={{ fontSize: 28, fontWeight: 700 }}>
-                Preview em tempo real
-              </h2>
+              <h2 style={{ fontSize: 28, fontWeight: 700 }}>{t.preview}</h2>
               <p style={{ color: "#666", marginTop: 4 }}>
-                Template selecionado: {templateName}
+                {t.selectedTemplate}: {templateName}
               </p>
             </div>
 
             <button className="button" onClick={downloadPDF}>
               <Download size={18} style={{ marginRight: 8 }} />
-              Baixar currículo
+              {t.download}
             </button>
           </div>
 

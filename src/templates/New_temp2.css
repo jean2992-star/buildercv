@@ -1,0 +1,175 @@
+/* TEMPLATE 2 - CORPORATE RESUME */
+
+.cv-page.corporate {
+  background: #ffffff;
+  color: #1f2937;
+  font-family: "Inter", "Sora", system-ui, sans-serif;
+  padding: 48px;
+}
+
+/* HEADER */
+
+.corp-header {
+  border-bottom: 3px solid #1f2937;
+  padding-bottom: 16px;
+  margin-bottom: 28px;
+}
+
+.corp-header h1 {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.corp-header p {
+  font-size: 18px;
+  color: #4b5563;
+  margin-top: 6px;
+}
+
+/* CONTACT */
+
+.corp-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 10px;
+}
+
+/* BODY */
+
+.corp-body {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* SECTION */
+
+.corp-body section {
+  margin-bottom: 6px;
+}
+
+.corp-body h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: #6b7280;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* TEXT */
+
+.corp-body p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* EXPERIENCE */
+
+.corp-item {
+  margin-bottom: 16px;
+}
+
+.corp-item-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.corp-item-header strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.corp-item-header span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.corp-company {
+  font-size: 14px;
+  color: #374151;
+  margin-top: 3px;
+  margin-bottom: 6px;
+}
+
+/* LIST */
+
+.corp-item ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.corp-item li {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* EDUCATION */
+
+.corp-edu {
+  margin-bottom: 12px;
+}
+
+.corp-edu strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.corp-edu p {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* SKILLS */
+
+.corp-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.corp-skill {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 4px;
+}
+
+/* LANGUAGES */
+
+.corp-languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.corp-language {
+  background: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .cv-page.corporate {
+    padding: 25px;
+  }
+
+  .corp-header h1 {
+    font-size: 26px;
+  }
+
+  .corp-skills {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,40 @@
+.cv-page.modern {
+  font-family: Arial, sans-serif;
+  background: #f6f7f4;
+  padding: 30px;
+}
+
+.modern-container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 30px;
+}
+
+.modern-sidebar {
+  background: #e4efe7;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.modern-main {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.modern-title {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.modern-role {
+  background: #9bc5aa;
+  padding: 8px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.modern-section {
+  margin-top: 20px;
+}

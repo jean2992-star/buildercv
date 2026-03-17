@@ -1,0 +1,164 @@
+/* TEMPLATE 7 - PROFESSIONAL SIDEBAR */
+
+.cv-page.sidebar-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 1123px;
+  background: #ffffff;
+  font-family: "Sora", system-ui, sans-serif;
+  color: #111;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  background: #111827;
+  color: #fff;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sidebar p {
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+/* SECTIONS SIDEBAR */
+
+.sidebar section {
+  margin-top: 10px;
+}
+
+.sidebar h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  color: #9ca3af;
+}
+
+/* LIST */
+
+.sidebar ul {
+  padding-left: 16px;
+}
+
+.sidebar li {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #e5e7eb;
+}
+
+/* MAIN CONTENT */
+
+.content {
+  padding: 40px;
+}
+
+/* HEADER MAIN */
+
+.content-header {
+  margin-bottom: 25px;
+}
+
+.content-header h1 {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.content-header p {
+  font-size: 18px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* SECTION */
+
+.content section {
+  margin-bottom: 28px;
+}
+
+.content h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* EXPERIENCE */
+
+.job {
+  margin-bottom: 16px;
+}
+
+.job strong {
+  font-size: 16px;
+}
+
+.job p {
+  font-size: 14px;
+  color: #555;
+}
+
+.job-company {
+  font-style: italic;
+  color: #777;
+}
+
+/* LIST */
+
+.content ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.content li {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* EDUCATION */
+
+.education-item {
+  margin-bottom: 12px;
+}
+
+.education-item strong {
+  font-size: 15px;
+}
+
+/* GRID (opcional extras) */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+  .cv-page.sidebar-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .content {
+    padding: 25px;
+  }
+}

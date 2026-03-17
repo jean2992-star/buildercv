@@ -1,0 +1,35 @@
+.cv-page.elegant {
+  font-family: "Georgia", serif;
+  background: #f8f8f7;
+  color: #222;
+}
+
+.elegant-header {
+  background: #234f88;
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+
+.elegant-header h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.elegant-header p {
+  margin-top: 10px;
+}
+
+.elegant-section {
+  padding: 30px 50px;
+}
+
+.elegant-section h3 {
+  font-size: 22px;
+  color: #234f88;
+  margin-bottom: 10px;
+}
+
+.elegant-job {
+  margin-bottom: 20px;
+}

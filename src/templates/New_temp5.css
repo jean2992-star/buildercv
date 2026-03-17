@@ -1,0 +1,147 @@
+/* TEMPLATE 5 - TECH DEVELOPER */
+
+.cv-page.tech {
+  background: #0f172a; /* azul escuro moderno */
+  color: #e5e7eb;
+  font-family: "Sora", system-ui, sans-serif;
+  padding: 40px;
+}
+
+/* HEADER */
+
+.cv-page.tech h1 {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.cv-page.tech h2 {
+  font-size: 18px;
+  color: #38bdf8;
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+
+/* CONTACT */
+
+.tech-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+/* SECTION */
+
+.cv-page.tech section {
+  margin-bottom: 28px;
+}
+
+.cv-page.tech h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+/* SKILLS */
+
+.tech-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-skill {
+  background: #1e293b;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  border: 1px solid #334155;
+}
+
+/* EXPERIENCE / PROJECTS */
+
+.tech-item {
+  margin-bottom: 18px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+.tech-item-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-item-header strong {
+  font-size: 15px;
+  color: #fff;
+}
+
+.tech-item-header span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* COMPANY */
+
+.tech-company {
+  font-size: 14px;
+  color: #38bdf8;
+  margin-top: 4px;
+}
+
+/* LIST */
+
+.tech-item ul {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.tech-item li {
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #cbd5f5;
+}
+
+/* EDUCATION */
+
+.tech-edu {
+  margin-bottom: 12px;
+}
+
+.tech-edu strong {
+  font-size: 14px;
+}
+
+/* LINKS */
+
+.tech-links {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .cv-page.tech {
+    padding: 25px;
+  }
+
+  .cv-page.tech h1 {
+    font-size: 26px;
+  }
+
+  .tech-item {
+    padding: 12px;
+  }
+}

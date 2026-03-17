@@ -1,0 +1,39 @@
+.cv-page.classic {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #222;
+  padding: 48px;
+  background: #fff;
+}
+
+.classic-header {
+  text-align: center;
+  border-top: 4px solid #555;
+  border-bottom: 1px solid #aaa;
+  padding: 20px 0;
+}
+
+.classic-header h1 {
+  font-size: 38px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.classic-header p {
+  font-style: italic;
+  margin-top: 6px;
+}
+
+.classic-section {
+  margin-top: 30px;
+}
+
+.classic-section h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 10px;
+}
+
+.classic-job {
+  margin-bottom: 16px;
+}

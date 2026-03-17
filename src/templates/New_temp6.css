@@ -1,0 +1,135 @@
+/* TEMPLATE 6 - CLEAN MINIMAL */
+
+.cv-page.minimal-clean {
+  background: #ffffff;
+  color: #111;
+  font-family: "Sora", system-ui, sans-serif;
+  padding: 50px;
+}
+
+/* HEADER */
+
+.minimal-header {
+  border-bottom: 2px solid #111;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+}
+
+.minimal-header h1 {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.minimal-header p {
+  font-size: 18px;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* CONTACT */
+
+.minimal-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* SECTION */
+
+.minimal-section {
+  margin-bottom: 26px;
+}
+
+.minimal-section h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+
+.minimal-section p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* EXPERIENCE */
+
+.minimal-item {
+  margin-bottom: 18px;
+}
+
+.minimal-item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.minimal-item-header strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.minimal-item-header span {
+  font-size: 13px;
+  color: #777;
+}
+
+/* DESCRIPTION */
+
+.minimal-item ul {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.minimal-item li {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* GRID (skills + languages) */
+
+.minimal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.minimal-grid div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+/* EDUCATION */
+
+.minimal-edu {
+  margin-bottom: 12px;
+}
+
+.minimal-edu strong {
+  font-size: 15px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .cv-page.minimal-clean {
+    padding: 25px;
+  }
+
+  .minimal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .minimal-header h1 {
+    font-size: 28px;
+  }
+}

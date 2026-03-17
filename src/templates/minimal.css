@@ -1,0 +1,34 @@
+.cv-page.minimal {
+  font-family: "Georgia", serif;
+  padding: 50px;
+  background: white;
+  color: #111;
+}
+
+.minimal-header {
+  text-align: center;
+  border-bottom: 2px solid #111;
+  padding-bottom: 20px;
+}
+
+.minimal-header h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.minimal-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.minimal-label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.minimal-content {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
