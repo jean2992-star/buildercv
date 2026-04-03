@@ -270,6 +270,66 @@ const templates = [
   { id: "new7", nome: "Professional Sidebar" },
 ];
 
+// Barra de progresso para preenchimento do formulário
+const calculateProgress = (data) => {
+  // Todos os campos do currículo mapeados para a barra de progresso
+  const essentialFields = [
+    'nome', 
+    'cargo', 
+    'email', 
+    'telefone', 
+    'cidade', 
+    'estado', 
+    'endereco', 
+    'linkedin', 
+    'resumo',
+    'habilidades', 
+    'idiomas', 
+    'experiencias', 
+    'formacoes', 
+    'cursos', 
+    'referencias'
+  ];
+  
+  let completed = 0;
+  
+  essentialFields.forEach(field => {
+    const value = data[field];
+    // Verifica se é array com itens (para as listas) ou string preenchida (para textos normais)
+    if (Array.isArray(value) && value.length > 0) completed++;
+    else if (typeof value === 'string' && value.trim() !== '') completed++;
+  });
+
+  return Math.round((completed / essentialFields.length) * 100);
+};
+
+// Componente Visual da Barra
+const ProgressBar = ({ progress }) => (
+  <div style={{ width: '100%', marginBottom: '20px' }}>
+    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '14px', fontWeight: '600', color: '#4b5563' }}>
+      <span>Força do Currículo</span>
+      <span>{progress}%</span>
+    </div>
+    <div style={{ width: '100%', height: '8px', background: '#e5e7eb', borderRadius: '10px', overflow: 'hidden' }}>
+      <div 
+        style={{ 
+          width: `${progress}%`, 
+          height: '100%', 
+          background: progress < 50 ? '#ef4444' : progress < 80 ? '#f59e0b' : '#10b981',
+          transition: 'width 0.5s ease-in-out' 
+        }} 
+      />
+    </div>
+    <p style={{ fontSize: '12px', color: '#6b7280', marginTop: '6px' }}>
+      {progress < 100 ? "Complete os campos obrigatórios para um currículo perfeito! " : "Currículo excelente! Pronto para baixar ✅"}
+    </p>
+  </div>
+);
+
+
+// Termino barra de progresso
+
+
 function updateListItem(setData, key, index, field, value) {
   setData((prev) => ({
     ...prev,
@@ -877,6 +937,9 @@ export default function App() {
   const previewRef = useRef(null);
 
   const t = translations[language];
+  const progress = calculateProgress(data);
+
+  
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("buildercv_language");
@@ -903,6 +966,7 @@ export default function App() {
   };
 
   return (
+    
     <div className="app-container">
       <motion.div
         initial={{ opacity: 0, y: 18 }}
@@ -911,6 +975,7 @@ export default function App() {
       >
         <div className="header" style={{ marginBottom: 24 }}>
           <div className="form-card" style={{ borderRadius: 22, padding: 28 }}>
+            
             <div
               style={{
                 display: "flex",
@@ -920,6 +985,7 @@ export default function App() {
                 flexWrap: "wrap",
               }}
             >
+              
               <div>
                 <div
                   style={{
@@ -960,7 +1026,8 @@ export default function App() {
           </div>
         </div>
       </motion.div>
-
+      {/* Barra de progresso adicionada aqui */}
+      <ProgressBar progress={progress} />  
       <div className="layout" style={{ gridTemplateColumns: "520px 1fr" }}>
         <div>
           <FormSection title={t.template} icon={<Palette size={20} color="#111827" />}>
