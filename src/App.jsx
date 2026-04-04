@@ -28,6 +28,7 @@ import "./templates/New_temp4.css";
 import "./templates/New_temp5.css";
 import "./templates/New_temp6.css";
 import "./templates/New_temp7.css";
+import "./templates/New_temp8.css";
 
 import NewTemp1 from "./templates/New_temp1";
 import NewTemp2 from "./templates/New_temp2";
@@ -36,6 +37,7 @@ import NewTemp4 from "./templates/New_temp4";
 import NewTemp5 from "./templates/New_temp5";
 import NewTemp6 from "./templates/New_temp6";
 import NewTemp7 from "./templates/New_temp7";
+import NewTemp8 from "./templates/New_temp8";
 
 const translations = {
   pt: {
@@ -268,6 +270,8 @@ const templates = [
   { id: "new5", nome: "Tech Developer" },
   { id: "new6", nome: "Clean Minimal" },
   { id: "new7", nome: "Professional Sidebar" },
+  // ADICIONE ESTA LINHA:
+  { id: "new8", nome: "Corporate Executive" },
 ];
 
 // Barra de progresso para preenchimento do formulário
@@ -923,6 +927,8 @@ function ResumePreview({ template, data, previewRef }) {
           {template === "new5" && <NewTemp5 data={data} />}
           {template === "new6" && <NewTemp6 data={data} />}
           {template === "new7" && <NewTemp7 data={data} />}
+          {/* ADICIONE ESTA LINHA: */}
+          {template === "new8" && <NewTemp8 data={data}/>}
         </div>
       </div>
     </div>

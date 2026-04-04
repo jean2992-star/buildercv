@@ -41,14 +41,14 @@ export default function NewTemp3({ data }) {
       </header>
 
       <section>
-        <h3>About</h3>
+        <h3>RESUMO</h3>
         <p style={{ lineHeight: 1.8 }}>
-          {data?.resumo || "Professional summary not provided."}
+          {data?.resumo || "Resumo profissional não fornecido."}
         </p>
       </section>
 
       <section>
-        <h3>Projects / Experience</h3>
+        <h3>EXPERIÊNCIA PROFISSIONAL</h3>
 
         {experiencias.length > 0 ? (
           experiencias.map((exp, i) => (
@@ -115,12 +115,12 @@ export default function NewTemp3({ data }) {
             </div>
           ))
         ) : (
-          <p>No projects or experience added.</p>
+          <p>Nenhuma experiência profissional adicionada.</p>
         )}
       </section>
 
       <section>
-        <h3>Skills</h3>
+        <h3>HABILIDADES</h3>
 
         {habilidades.length > 0 ? (
           <div
@@ -152,12 +152,12 @@ export default function NewTemp3({ data }) {
             ))}
           </div>
         ) : (
-          <p>No skills added.</p>
+          <p>Nenhuma habilidade adicionada.</p>
         )}
       </section>
 
       <section>
-        <h3>Education</h3>
+        <h3>FORMAÇÃO</h3>
 
         {formacoes.length > 0 ? (
           formacoes.map((edu, i) => (
@@ -206,13 +206,13 @@ export default function NewTemp3({ data }) {
             </div>
           ))
         ) : (
-          <p>No education added.</p>
+          <p>Nenhuma formação adicionada.</p>
         )}
       </section>
 
       {cursos.length > 0 && (
         <section>
-          <h3>Courses</h3>
+          <h3>CURSOS</h3>
 
           <div
             style={{
@@ -250,7 +250,7 @@ export default function NewTemp3({ data }) {
 
       {idiomas.length > 0 && (
         <section>
-          <h3>Languages</h3>
+          <h3>IDIOMAS</h3>
 
           <div
             style={{
@@ -282,7 +282,7 @@ export default function NewTemp3({ data }) {
 
       {referencias.length > 0 && (
         <section>
-          <h3>References</h3>
+          <h3>REFERÊNCIAS</h3>
 
           {referencias.map((ref, i) => (
             <div
@@ -293,7 +293,7 @@ export default function NewTemp3({ data }) {
                 borderBottom: "1px solid #e5e7eb",
               }}
             >
-              <strong>{ref.nome || "Reference"}</strong>
+              <strong>{ref.nome || "Referência"}</strong>
               {ref.empresa && (
                 <p style={{ color: "#6b7280", marginTop: "4px" }}>
                   {ref.empresa}

@@ -1,40 +1,145 @@
+/* src/templates/modern.css */
+
 .cv-page.modern {
-  font-family: Arial, sans-serif;
-  background: #f6f7f4;
+  font-family: "Segoe UI", Arial, sans-serif; /* Segoe UI dá um toque mais moderno que o Arial puro */
+  background: #ffffff; /* Fundo principal branco para não gastar tinta na impressão */
   padding: 30px;
+  color: #333;
+  line-height: 1.6;
+  min-height: 297mm;
+  box-sizing: border-box;
 }
 
 .modern-container {
   display: grid;
   grid-template-columns: 240px 1fr;
   gap: 30px;
+  align-items: start; /* Impede que a barra lateral estique desnecessariamente */
 }
 
+/* --- BARRA LATERAL (ESQUERDA) --- */
 .modern-sidebar {
-  background: #e4efe7;
-  padding: 20px;
-  border-radius: 10px;
+  background: #e4efe7; /* Verde bem claro e elegante */
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: left !important; /* Força tudo para a esquerda */
 }
 
+.modern-sidebar p {
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 6px !important;
+  text-align: left !important;
+}
+
+.modern-sidebar ul {
+  padding-left: 18px !important;
+  margin-top: 8px !important;
+  margin-bottom: 20px !important;
+}
+
+.modern-sidebar li {
+  font-size: 13.5px !important;
+  margin-bottom: 6px !important;
+  text-align: left !important;
+}
+
+/* --- CONTEÚDO PRINCIPAL (DIREITA) --- */
 .modern-main {
   background: #fff;
-  padding: 25px;
+  padding: 10px 15px;
   border-radius: 10px;
+  text-align: left !important;
 }
 
 .modern-title {
-  font-size: 32px;
-  font-weight: 800;
+  font-size: 36px !important;
+  font-weight: 900 !important;
+  color: #111 !important;
+  margin: 0 0 8px 0 !important;
+  text-align: left !important;
+  letter-spacing: -0.5px;
 }
 
+/* O Cargo (Badge Verde) - CORREÇÃO DO ESTICAMENTO */
 .modern-role {
-  background: #9bc5aa;
-  padding: 8px;
-  border-radius: 10px;
-  margin-top: 10px;
-  font-weight: bold;
+  background: #9bc5aa !important;
+  color: #1a3c2f !important;
+  padding: 6px 16px !important;
+  border-radius: 8px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  display: inline-block !important; /* MÁGICA: Faz o fundo abraçar apenas o texto, sem esticar! */
+  margin-bottom: 25px !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* --- SEÇÕES BASE --- */
 .modern-section {
-  margin-top: 20px;
+  margin-bottom: 28px !important;
+  text-align: left !important;
+}
+
+/* Alinhamento dos Ícones de Título */
+.modern-section > div[style*="display: flex"] {
+  margin-bottom: 14px !important;
+}
+
+/* Títulos das Seções (Resumo, Experiência...) */
+.modern-section span {
+  font-size: 18px !important;
+  letter-spacing: 0.5px !important;
+  color: #2d564c !important; /* Verde escuro para contraste */
+}
+
+/* Texto do Resumo */
+.modern-section p {
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+  text-align: justify !important;
+  color: #444 !important;
+}
+
+/* --- CORREÇÃO EXPERIÊNCIA E FORMAÇÃO (Fontes Gigantes) --- */
+.modern-section div > div > p:nth-child(1) {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: #2d564c !important; /* Empresa / Curso ganha destaque no verde escuro */
+  margin-bottom: 2px !important;
+  text-align: left !important;
+}
+
+.modern-section div > div > p:nth-child(2) {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #333 !important; /* Cargo / Instituição */
+  text-align: left !important;
+  margin-bottom: 8px !important;
+}
+
+/* O lado direito (Datas e Local) - Não queremos que fique verde e negrito */
+.modern-section div > div[style*="right"] > p {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #6b7280 !important;
+  text-align: right !important; /* Mantém as datas alinhadas à direita */
+  margin-bottom: 2px !important;
+}
+
+/* --- CORREÇÃO DEFINITIVA DAS BOLINHAS (BULLETS) --- */
+.modern-main ul {
+  padding-left: 20px !important;
+  margin-top: 6px !important;
+  margin-bottom: 22px !important;
+}
+
+.modern-main li {
+  font-size: 14px !important;
+  text-align: left !important; /* Trava o texto na esquerda */
+  list-style-type: disc !important;
+  list-style-position: outside !important; /* Bolinha pra fora da margem */
+  margin-bottom: 6px !important;
+  line-height: 1.6 !important;
+  color: #444 !important;
 }

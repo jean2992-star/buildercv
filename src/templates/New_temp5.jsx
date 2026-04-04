@@ -40,14 +40,14 @@ export default function NewTemp5({ data }) {
       </header>
 
       <section>
-        <h3>Profile</h3>
+        <h3>RESUMO</h3>
         <p style={{ lineHeight: 1.8 }}>
-          {data?.resumo || "Professional summary not provided."}
+          {data?.resumo || "Resumo profissional não fornecido."}
         </p>
       </section>
 
       <section>
-        <h3>Tech Skills</h3>
+        <h3>HABILIDADES</h3>
 
         {habilidades.length > 0 ? (
           <div
@@ -80,12 +80,12 @@ export default function NewTemp5({ data }) {
             ))}
           </div>
         ) : (
-          <p>No skills added.</p>
+          <p>Nenhuma habilidade adicionada.</p>
         )}
       </section>
 
       <section>
-        <h3>Projects / Experience</h3>
+        <h3>EXPERIÊNCIA PROFISSIONAL</h3>
 
         {experiencias.length > 0 ? (
           experiencias.map((exp, i) => (
@@ -114,10 +114,10 @@ export default function NewTemp5({ data }) {
                       marginBottom: "4px",
                     }}
                   >
-                    {exp.cargo || "Project / Role"}
+                    {exp.cargo || "Cargo"}
                   </strong>
                   <p style={{ color: "#475569", fontWeight: 500 }}>
-                    {exp.empresa || "Company"}
+                    {exp.empresa || "Empresa"}
                     {exp.local ? ` • ${exp.local}` : ""}
                   </p>
                 </div>
@@ -148,12 +148,12 @@ export default function NewTemp5({ data }) {
             </div>
           ))
         ) : (
-          <p>No projects or experience added.</p>
+          <p>Nenhuma experiência profissional adicionada.</p>
         )}
       </section>
 
       <section>
-        <h3>Education</h3>
+        <h3>FORMAÇÃO</h3>
 
         {formacoes.length > 0 ? (
           formacoes.map((edu, i) => (
@@ -181,10 +181,10 @@ export default function NewTemp5({ data }) {
                       marginBottom: "4px",
                     }}
                   >
-                    {edu.curso || "Degree"}
+                    {edu.curso || "Curso"}
                   </strong>
                   <p style={{ color: "#475569", fontWeight: 500 }}>
-                    {edu.instituicao || "Institution"}
+                    {edu.instituicao || "Instituição"}
                     {edu.local ? ` • ${edu.local}` : ""}
                   </p>
                 </div>
@@ -202,13 +202,13 @@ export default function NewTemp5({ data }) {
             </div>
           ))
         ) : (
-          <p>No education added.</p>
+          <p>Nenhuma formação adicionada.</p>
         )}
       </section>
 
       {cursos.length > 0 && (
         <section>
-          <h3>Courses / Certifications</h3>
+          <h3>CURSOS E CERTIFICAÇÕES</h3>
 
           <div
             style={{
@@ -228,7 +228,7 @@ export default function NewTemp5({ data }) {
                 }}
               >
                 <strong style={{ display: "block", marginBottom: "4px" }}>
-                  {curso.nome || "Course"}
+                  {curso.nome || "Curso"}
                 </strong>
                 {curso.instituicao && (
                   <p style={{ color: "#64748b" }}>{curso.instituicao}</p>
@@ -246,7 +246,7 @@ export default function NewTemp5({ data }) {
 
       {idiomas.length > 0 && (
         <section>
-          <h3>Languages</h3>
+          <h3>IDIOMAS</h3>
 
           <div
             style={{

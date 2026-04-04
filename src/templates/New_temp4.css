@@ -1,224 +1,173 @@
-/* TEMPLATE 4 - EXECUTIVE DARK */
+/* src/templates/New_temp4.css */
 
 .cv-page.dark {
-  background: #0f172a;
-  color: #e5e7eb;
-  font-family: "Sora", system-ui, sans-serif;
-  padding: 44px;
-  min-height: 1123px;
+  background-color: #0f172a !important; /* Fundo Slate 900 (Azul muito escuro) */
+  color: #e2e8f0 !important; /* Texto base cinza claro */
+  font-family: "Sora", system-ui, sans-serif !important;
+  padding: 45px 50px !important;
+  line-height: 1.6 !important;
+  min-height: 297mm;
+  box-sizing: border-box;
 }
 
-/* HEADER */
-
+/* --- CABEÇALHO --- */
+.cv-page.dark > div:first-child,
 .cv-page.dark header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  padding-bottom: 24px;
-  margin-bottom: 30px;
+  text-align: center !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Linha divisória suave */
+  padding-bottom: 24px !important;
+  margin-bottom: 30px !important;
 }
 
-.cv-page.dark header h1 {
-  font-size: 42px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-  margin-bottom: 8px;
+.cv-page.dark h1 {
+  font-size: 36px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important; /* Branco puro pro nome brilhar */
+  margin: 0 0 6px 0 !important;
+  letter-spacing: -0.5px !important;
+  text-align: center !important;
 }
 
-.cv-page.dark header p {
-  font-size: 20px;
-  font-weight: 600;
-  color: #60a5fa;
-  margin-bottom: 14px;
+/* Cargo */
+.cv-page.dark .cv-role,
+.cv-page.dark h1 + p {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #60a5fa !important; /* Azul claro vibrante */
+  margin: 0 0 14px 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  text-align: center !important;
 }
 
-/* CONTATO */
-
-.dark-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  color: #cbd5e1;
-  font-size: 14px;
-  line-height: 1.7;
+/* Contatos */
+.cv-page.dark .cv-contact,
+.cv-page.dark > div:first-child > div:last-child {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px 20px !important;
+  font-size: 13.5px !important;
+  color: #94a3b8 !important; /* Cinza médio */
 }
 
-.dark-contact span {
-  opacity: 0.95;
+.cv-page.dark span {
+  color: #94a3b8 !important;
 }
 
-/* SECTION */
-
+/* --- SEÇÕES BASE --- */
 .cv-page.dark section {
-  margin-bottom: 28px;
+  margin-bottom: 30px !important;
+  text-align: left !important; /* Trava tudo na esquerda */
 }
 
-.cv-page.dark section h3 {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #93c5fd;
-  margin-bottom: 12px;
-  font-weight: 700;
+/* Títulos (SUMMARY, EXPERIENCE) */
+.cv-page.dark h3 {
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #93c5fd !important; /* Azul bem claro pastel */
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 18px !important;
+  margin-top: 0 !important;
+  text-align: left !important;
 }
 
-/* TEXT */
-
+/* Textos descritivos (Resumo) */
 .cv-page.dark p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #dbe4f0;
+  font-size: 14.5px !important;
+  color: #cbd5e1 !important; /* Texto com alto contraste */
+  line-height: 1.7 !important;
+  text-align: justify !important; /* Retira a centralização bizarra */
+  margin: 0 !important;
 }
 
-/* EXPERIENCE / BLOCK */
-
-.dark-item {
-  background: #111c31;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 16px 18px;
-  margin-bottom: 16px;
+/* --- EXPERIÊNCIA E FORMAÇÃO --- */
+.cv-page.dark .job,
+.cv-page.dark section > div {
+  margin-bottom: 22px !important;
 }
 
-.dark-item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 6px;
+.cv-page.dark .job > div:first-child,
+.cv-page.dark section > div > div:first-child {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  margin-bottom: 4px !important;
 }
 
-.dark-item-header strong {
-  font-size: 18px;
-  color: #ffffff;
-  font-weight: 700;
+/* Cargo / Curso */
+.cv-page.dark strong {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: #f8fafc !important; /* Quase branco */
+  text-align: left !important;
 }
 
-.dark-item-date {
-  font-size: 13px;
-  color: #93c5fd;
-  font-weight: 600;
-  white-space: nowrap;
+/* Datas e Localização */
+.cv-page.dark .job > div:first-child > div:last-child,
+.cv-page.dark section > div > div:first-child > div:last-child {
+  font-size: 13px !important;
+  color: #94a3b8 !important;
+  text-align: right !important;
+  white-space: nowrap !important;
 }
 
-.dark-company {
-  font-size: 14px;
-  color: #cbd5e1;
-  margin-bottom: 10px;
+/* Empresa / Instituição */
+.cv-page.dark .job-company,
+.cv-page.dark section > div > p {
+  font-size: 14.5px !important;
+  font-weight: 500 !important;
+  color: #60a5fa !important; /* Combina com a cor do cargo no header */
+  margin: 0 0 10px 0 !important;
+  text-align: left !important;
 }
 
-/* LISTAS */
-
+/* --- CORREÇÃO DAS BOLINHAS (BULLETS) --- */
 .cv-page.dark ul {
-  padding-left: 18px;
-  margin-top: 8px;
+  padding-left: 20px !important;
+  margin: 8px 0 0 0 !important;
 }
 
 .cv-page.dark li {
-  font-size: 14px;
-  color: #e2e8f0;
-  line-height: 1.75;
-  margin-bottom: 5px;
+  font-size: 14px !important;
+  color: #cbd5e1 !important;
+  text-align: left !important;
+  list-style-type: disc !important;
+  list-style-position: outside !important; /* Bolinha pra fora da margem do texto */
+  margin-bottom: 6px !important;
+  line-height: 1.6 !important;
 }
 
-/* SKILLS */
-
-.dark-skills {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+/* --- HABILIDADES E IDIOMAS (O FIM DAS CAIXAS BRANCAS) --- */
+.cv-page.dark section > div[style*="flex-wrap"],
+.cv-page.dark section > div[style*="grid"] {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 14px !important;
 }
 
-.dark-skill {
-  background: #111c31;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 12px 14px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+/* Substitui o branco vazado por um "Glassmorphism" escuro e elegante */
+.cv-page.dark section > div[style*="grid"] > div,
+.cv-page.dark section > div[style*="flex-wrap"] > div {
+  background: rgba(255, 255, 255, 0.05) !important; /* Fundo semi-transparente elegante */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important; /* Borda bem fina */
+  padding: 12px 16px !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 
-.dark-skill-name {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 14px;
+.cv-page.dark section > div[style*="grid"] > div > strong {
+  color: #f8fafc !important;
+  font-size: 14px !important;
 }
 
-.dark-skill-level {
-  color: #93c5fd;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* IDIOMAS */
-
-.dark-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.dark-badge {
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(96, 165, 250, 0.12);
-  border: 1px solid rgba(96, 165, 250, 0.2);
-  color: #bfdbfe;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* REFERÊNCIAS */
-
-.dark-reference {
-  background: #111c31;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
-}
-
-.dark-reference strong {
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.dark-reference p {
-  margin-top: 5px;
-  color: #cbd5e1;
-  font-size: 14px;
-}
-
-/* SEPARAÇÃO SUAVE */
-
-.dark-divider {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.08);
-  margin: 10px 0 0;
-}
-
-/* RESPONSIVO */
-
-@media (max-width: 768px) {
-  .cv-page.dark {
-    padding: 26px;
-  }
-
-  .cv-page.dark header h1 {
-    font-size: 30px;
-  }
-
-  .cv-page.dark header p {
-    font-size: 17px;
-  }
-
-  .dark-skills {
-    grid-template-columns: 1fr;
-  }
-
-  .dark-item {
-    padding: 14px;
-  }
+.cv-page.dark section > div[style*="grid"] > div > span {
+  color: #93c5fd !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
 }

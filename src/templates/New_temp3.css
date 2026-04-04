@@ -1,178 +1,184 @@
-/* TEMPLATE 1 - PROFESSIONAL MODERN */
+/* src/templates/New_temp3.css */
 
-.cv-page.new-template {
-  background: #ffffff;
-  color: #111827;
-  font-family: "Sora", system-ui, sans-serif;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+.cv-page.creative {
+  font-family: "Sora", system-ui, sans-serif !important;
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  padding: 45px 50px !important;
+  line-height: 1.6 !important;
+  min-height: 297mm;
+  box-sizing: border-box;
 }
 
-/* HEADER */
-
-.cv-header-modern {
-  padding: 40px 50px 30px;
-  border-bottom: 1px solid #e5e7eb;
+/* --- CABEÇALHO --- */
+.cv-page.creative > div:first-child,
+.cv-page.creative header {
+  text-align: center !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding-bottom: 20px !important;
+  margin-bottom: 25px !important;
 }
 
-.cv-header-modern h1 {
-  font-size: 36px;
-  font-weight: 900;
-  letter-spacing: -0.02em;
+.cv-page.creative h1 {
+  font-size: 36px !important;
+  font-weight: 900 !important;
+  color: #111827 !important;
+  margin: 0 0 6px 0 !important;
+  text-align: center !important;
 }
 
-.cv-role {
-  font-size: 18px;
-  color: #4b5563;
-  margin-top: 6px;
+/* Cargo em azul vibrante */
+.cv-page.creative h1 + p,
+.cv-page.creative .role {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #111827  !important; /* Azul tech elegante */
+  margin: 0 0 12px 0 !important;
+  text-align: center !important;
 }
 
-.cv-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 13px;
-  color: #6b7280;
-  margin-top: 12px;
+/* Contatos */
+.cv-page.creative > div:first-child > div:last-child,
+.cv-page.creative .contact-info {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px 20px !important;
+  font-size: 13.5px !important;
+  color: #6b7280 !important;
 }
 
-/* GRID LAYOUT */
-
-.cv-grid {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  min-height: 900px;
+/* --- SEÇÕES BASE --- */
+.cv-page.creative section {
+  margin-bottom: 28px !important;
+  text-align: left !important;
 }
 
-/* SIDEBAR */
-
-.cv-sidebar {
-  background: #f9fafb;
-  padding: 30px 24px;
-  border-right: 1px solid #e5e7eb;
+/* Títulos de Seção centralizados */
+.cv-page.creative h3 {
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #111827 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  text-align: center !important; 
+  margin-bottom: 18px !important;
 }
 
-.cv-sidebar section {
-  margin-bottom: 24px;
+/* Texto do Resumo */
+.cv-page.creative section > p {
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+  color: #4b5563 !important;
+  text-align: justify !important;
+  margin: 0 !important;
 }
 
-.cv-sidebar h3 {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #6b7280;
-  margin-bottom: 10px;
+/* --- EXPERIÊNCIA E FORMAÇÃO --- */
+.cv-page.creative .job,
+.cv-page.creative section > div {
+  margin-bottom: 22px !important;
 }
 
-.cv-sidebar p {
-  font-size: 14px;
-  color: #374151;
+.cv-page.creative .job > div:first-child,
+.cv-page.creative section > div > div:first-child {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  margin-bottom: 4px !important;
 }
 
-.cv-sidebar ul {
-  padding-left: 16px;
+.cv-page.creative .job strong,
+.cv-page.creative section > div > div:first-child strong {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: #111827 !important;
+  text-align: left !important;
 }
 
-.cv-sidebar li {
-  font-size: 14px;
-  margin-bottom: 5px;
+/* Datas e Localização */
+.cv-page.creative .job > div:first-child > div:last-child,
+.cv-page.creative section > div > div:first-child > div:last-child {
+  font-size: 13.5px !important;
+  color: #6b7280 !important;
+  text-align: right !important;
+  white-space: nowrap !important;
 }
 
-/* MAIN CONTENT */
-
-.cv-main {
-  padding: 35px 45px;
+/* Empresa / Instituição */
+.cv-page.creative .job-company,
+.cv-page.creative section > div > p {
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  color: #6b7280 !important;
+  margin: 0 0 10px 0 !important;
+  text-align: left !important;
 }
 
-/* SECTIONS */
-
-.cv-main section {
-  margin-bottom: 28px;
+/* Bolinhas de atividades */
+.cv-page.creative ul {
+  padding-left: 20px !important;
+  margin: 6px 0 0 0 !important;
 }
 
-.cv-main h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #6b7280;
-  margin-bottom: 10px;
-  letter-spacing: 1.4px;
+.cv-page.creative li {
+  font-size: 14px !important;
+  color: #374151 !important;
+  text-align: left !important; 
+  list-style-type: disc !important;
+  list-style-position: outside !important; 
+  margin-bottom: 5px !important;
+  line-height: 1.6 !important;
 }
 
-/* TEXT */
+/* =========================================================
+   HABILIDADES, IDIOMAS E CURSOS (REMOÇÃO DOS QUADRADOS)
+========================================================= */
 
-.cv-main p {
-  font-size: 15px;
-  line-height: 1.7;
+/* Transforma os containers em um grid duplo organizado */
+.cv-page.creative section > div[style*="flex-wrap"],
+.cv-page.creative section > div[style*="grid"] {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px 30px !important;
 }
 
-/* EXPERIENCE */
-
-.job {
-  margin-bottom: 16px;
+/* DESTRÓI OS FUNDOS E BORDAS INTRUSOS */
+.cv-page.creative section > div[style*="grid"] > div,
+.cv-page.creative section > div[style*="flex-wrap"] > div {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 0 6px 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  border-bottom: 1px solid #f3f4f6 !important; /* Apenas uma linha super fina embaixo */
 }
 
-.job strong {
-  font-size: 16px;
-  font-weight: 700;
+/* Correção para os Cursos não ficarem espremidos no flexbox */
+.cv-page.creative section:nth-last-of-type(2) > div[style*="grid"] > div {
+  display: block !important;
+  text-align: left !important;
+  padding-bottom: 12px !important;
 }
 
-.job-company {
-  font-size: 14px;
-  color: #4b5563;
-  margin-bottom: 6px;
+/* Textos Fortes e Claros (Preto) */
+.cv-page.creative section > div[style*="grid"] > div > strong,
+.cv-page.creative section > div[style*="grid"] > div > span:first-child,
+.cv-page.creative section > div[style*="flex-wrap"] > div {
+  font-size: 14px !important;
+  color: #111827 !important; /* TEXTO PRETO */
+  font-weight: 700 !important;
 }
 
-.job ul {
-  padding-left: 18px;
-}
-
-.job li {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-/* EDUCATION */
-
-.cv-edu {
-  margin-bottom: 12px;
-}
-
-.cv-edu strong {
-  font-size: 15px;
-}
-
-/* REFERENCES */
-
-.cv-ref {
-  margin-bottom: 10px;
-}
-
-.cv-ref strong {
-  font-size: 14px;
-}
-
-/* RESPONSIVO */
-
-@media (max-width: 900px) {
-  .cv-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cv-sidebar {
-    border-right: none;
-    border-bottom: 1px solid #e5e7eb;
-  }
-
-  .cv-main {
-    padding: 25px;
-  }
-
-  .cv-header-modern {
-    padding: 25px;
-  }
-
-  .cv-header-modern h1 {
-    font-size: 28px;
-  }
+/* Textos Suaves (Cinza) para Níveis e Descrições */
+.cv-page.creative section > div[style*="grid"] > div > span:last-child,
+.cv-page.creative section > div[style*="grid"] > div > p {
+  font-size: 13px !important;
+  color: #6b7280 !important; /* TEXTO CINZA */
+  font-weight: 400 !important;
+  margin: 2px 0 0 0 !important;
 }

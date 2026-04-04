@@ -49,14 +49,14 @@ export default function NewTemp4({ data }) {
       </header>
 
       <section>
-        <h3>Summary</h3>
+        <h3>RESUMO</h3>
         <p style={{ lineHeight: 1.8, color: "rgba(255,255,255,0.88)" }}>
-          {data?.resumo || "Professional summary not provided."}
+          {data?.resumo || "Resumo profissional não fornecido."}
         </p>
       </section>
 
       <section>
-        <h3>Experience</h3>
+        <h3>EXPERIÊNCIA PROFISSIONAL</h3>
 
         {experiencias.length > 0 ? (
           experiencias.map((exp, i) => (
@@ -132,13 +132,13 @@ export default function NewTemp4({ data }) {
           ))
         ) : (
           <p style={{ color: "rgba(255,255,255,0.75)" }}>
-            No experience added.
+            Nenhuma experiência profissional adicionada.
           </p>
         )}
       </section>
 
       <section>
-        <h3>Skills</h3>
+        <h3>HABILIDADES</h3>
 
         {habilidades.length > 0 ? (
           <div
@@ -171,12 +171,12 @@ export default function NewTemp4({ data }) {
             ))}
           </div>
         ) : (
-          <p style={{ color: "rgba(255,255,255,0.75)" }}>No skills added.</p>
+          <p style={{ color: "rgba(255,255,255,0.75)" }}>Nenhuma habilidade adicionada.</p>
         )}
       </section>
 
       <section>
-        <h3>Education</h3>
+        <h3>FORMAÇÃO</h3>
 
         {formacoes.length > 0 ? (
           formacoes.map((edu, i) => (
@@ -235,14 +235,14 @@ export default function NewTemp4({ data }) {
           ))
         ) : (
           <p style={{ color: "rgba(255,255,255,0.75)" }}>
-            No education added.
+            Nenhuma formação adicionada.
           </p>
         )}
       </section>
 
       {idiomas.length > 0 && (
         <section>
-          <h3>Languages</h3>
+          <h3>IDIOMAS</h3>
 
           <div
             style={{
@@ -275,7 +275,7 @@ export default function NewTemp4({ data }) {
 
       {referencias.length > 0 && (
         <section>
-          <h3>References</h3>
+          <h3>REFERÊNCIAS</h3>
 
           {referencias.map((ref, i) => (
             <div
@@ -289,7 +289,7 @@ export default function NewTemp4({ data }) {
               }}
             >
               <strong style={{ color: "#ffffff" }}>
-                {ref.nome || "Reference"}
+                {ref.nome || "Referência"}
               </strong>
               {ref.empresa && (
                 <p style={{ color: "#cbd5e1", marginTop: "4px" }}>

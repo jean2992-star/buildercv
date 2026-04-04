@@ -15,7 +15,7 @@ export default function NewTemp7({ data }) {
         <p>{data?.cargo || "Cargo Desejado"}</p>
 
         <section>
-          <h3>Contact</h3>
+          <h3>CONTATO</h3>
           {data?.email && <p>{data.email}</p>}
           {data?.telefone && <p>{data.telefone}</p>}
           {(data?.cidade || data?.estado) && (
@@ -26,14 +26,14 @@ export default function NewTemp7({ data }) {
         </section>
 
         <section>
-          <h3>Profile</h3>
+          <h3>RESUMO</h3>
           <p style={{ lineHeight: 1.7 }}>
-            {data?.resumo || "Professional summary not provided."}
+            {data?.resumo || "Resumo profissional não fornecido."}
           </p>
         </section>
 
         <section>
-          <h3>Skills</h3>
+          <h3>HABILIDADES</h3>
           {habilidades.length > 0 ? (
             <ul>
               {habilidades.map((item, i) => (
@@ -45,13 +45,13 @@ export default function NewTemp7({ data }) {
               ))}
             </ul>
           ) : (
-            <p>No skills added.</p>
+            <p>Nenhuma habilidade adicionada.</p>
           )}
         </section>
 
         {idiomas.length > 0 && (
           <section>
-            <h3>Languages</h3>
+            <h3>IDIOMAS</h3>
             <ul>
               {idiomas.map((item, i) => (
                 <li key={i}>
@@ -66,7 +66,7 @@ export default function NewTemp7({ data }) {
 
         {cursos.length > 0 && (
           <section>
-            <h3>Courses</h3>
+            <h3>CURSOS</h3>
             <ul>
               {cursos.map((curso, i) => (
                 <li key={i} style={{ marginBottom: "10px" }}>
@@ -86,7 +86,7 @@ export default function NewTemp7({ data }) {
 
       <main className="content">
         <section>
-          <h3>Experience</h3>
+          <h3>EXPERIÊNCIA PROFISSIONAL</h3>
 
           {experiencias.length > 0 ? (
             experiencias.map((exp, i) => (
@@ -148,12 +148,12 @@ export default function NewTemp7({ data }) {
               </div>
             ))
           ) : (
-            <p>No experience added.</p>
+            <p>Nenhuma experiência profissional adicionada.</p>
           )}
         </section>
 
         <section>
-          <h3>Education</h3>
+          <h3>FORMAÇÃO</h3>
 
           {formacoes.length > 0 ? (
             formacoes.map((edu, i) => (
@@ -204,13 +204,13 @@ export default function NewTemp7({ data }) {
               </div>
             ))
           ) : (
-            <p>No education added.</p>
+            <p>Nenhuma formação adicionada.</p>
           )}
         </section>
 
         {referencias.length > 0 && (
           <section>
-            <h3>References</h3>
+            <h3>REFERÊNCIAS</h3>
 
             {referencias.map((ref, i) => (
               <div
@@ -221,7 +221,7 @@ export default function NewTemp7({ data }) {
                   borderBottom: "1px solid #d1d5db",
                 }}
               >
-                <strong>{ref.nome || "Reference"}</strong>
+                <strong>{ref.nome || "Referência"}</strong>
                 {ref.empresa && (
                   <p style={{ color: "#6b7280", marginTop: "4px" }}>
                     {ref.empresa}

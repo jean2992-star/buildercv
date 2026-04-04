@@ -1,34 +1,119 @@
+/* src/templates/minimal.css */
+
 .cv-page.minimal {
-  font-family: "Georgia", serif;
-  padding: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Fontes sem serifa são o padrão ouro do minimalismo */
+  padding: 45px 50px;
   background: white;
-  color: #111;
+  color: #1a1a1a;
+  line-height: 1.6;
+  min-height: 297mm;
 }
 
+/* --- CABEÇALHO --- */
 .minimal-header {
-  text-align: center;
+  text-align: left; /* Mudei para a esquerda para manter o alinhamento reto e elegante */
   border-bottom: 2px solid #111;
   padding-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .minimal-header h1 {
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 32px !important;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 6px 0 !important;
 }
 
+.minimal-header p {
+  font-size: 13.5px !important;
+  color: #555;
+  margin: 0;
+}
+
+/* --- GRID PRINCIPAL --- */
 .minimal-grid {
   display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 25px;
-  margin-top: 20px;
+  grid-template-columns: 140px 1fr; /* Coluna da esquerda um pouco mais justa */
+  gap: 30px;
+  margin-bottom: 25px;
 }
 
+/* Títulos da Esquerda (Resumo, Experiência) */
 .minimal-label {
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #111;
+  border-top: 2px solid #111; /* Fio preto forte para ancorar o olhar */
+  padding-top: 12px;
 }
 
+/* Conteúdo da Direita */
 .minimal-content {
-  border-top: 1px solid #ccc;
-  padding-top: 10px;
+  border-top: 1px solid #ddd; /* Fio cinza suave para alinhar com a coluna da esquerda */
+  padding-top: 12px;
+  font-size: 14px;
+  text-align: justify !important;
+  color: #333;
+}
+
+/* --- CORREÇÃO DO GRID INTERNO (JSX VAZANDO) --- */
+/* Força o grid de Datas | Cargo | Local a ter as larguras corretas */
+.minimal-content > div > div[style*="grid"] {
+  grid-template-columns: 130px 1fr 100px !important;
+  gap: 16px !important;
+  align-items: start;
+}
+
+/* 1ª Coluna: DATAS */
+.minimal-content > div > div[style*="grid"] > div:nth-child(1) {
+  font-size: 13px !important;
+  color: #666;
+  white-space: nowrap; /* Impede a data de quebrar linha e espremer */
+}
+
+/* 2ª Coluna: CARGO E EMPRESA (Domando a Fonte Gigante 22) */
+.minimal-content p {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #111 !important;
+  margin: 0 0 8px 0 !important;
+  text-align: left !important;
+}
+
+/* 3ª Coluna: LOCAL */
+.minimal-content > div > div[style*="grid"] > div:nth-child(3) {
+  font-size: 12px !important;
+  color: #888;
+  text-align: right !important;
+}
+
+/* --- CORREÇÃO DEFINITIVA DAS BOLINHAS (BULLETS) --- */
+.minimal-content ul {
+  padding-left: 18px !important;
+  margin: 0 !important;
+}
+
+.minimal-content li {
+  font-size: 13.5px !important;
+  font-weight: 400 !important;
+  color: #444 !important;
+  text-align: left !important; /* Trava as atividades na esquerda */
+  list-style-type: square !important; /* Bolinha quadrada combina muito mais com minimalismo */
+  list-style-position: outside !important;
+  margin-bottom: 6px !important;
+  line-height: 1.6;
+}
+
+/* --- HABILIDADES E IDIOMAS --- */
+.minimal-content div[style*="flex"] {
+  font-size: 13.5px !important;
+  border-bottom: 1px dotted #ccc; /* Divisória super leve */
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+.minimal-content span[style*="font-weight: 700"] {
+  color: #111 !important;
 }

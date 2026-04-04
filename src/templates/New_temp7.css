@@ -1,164 +1,191 @@
-/* TEMPLATE 7 - PROFESSIONAL SIDEBAR */
+/* src/templates/New_temp7.css */
 
 .cv-page.sidebar-layout {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  min-height: 1123px;
-  background: #ffffff;
-  font-family: "Sora", system-ui, sans-serif;
-  color: #111;
+  display: grid !important;
+  grid-template-columns: 280px 1fr !important; 
+  min-height: 297mm; 
+  background: #ffffff !important; /* Fundo base da página */
+  font-family: "Sora", system-ui, sans-serif !important;
+  color: #111111 !important;
+  box-sizing: border-box;
+  padding: 0 !important; 
 }
 
-/* SIDEBAR */
-
-.sidebar {
-  background: #111827;
-  color: #fff;
-  padding: 40px 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+/* =========================================
+   BARRA LATERAL (FUNDO AZUL ESCURO)
+   Regra: Fundo Escuro -> Textos em Branco
+========================================= */
+.cv-page.sidebar-layout .sidebar {
+  background: #0f172a !important; /* Azul Escuro / Slate 900 */
+  padding: 45px 30px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 28px !important;
+  text-align: left !important;
 }
 
-.sidebar h2 {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+/* BLINDAGEM MÁXIMA: Força ABSOLUTAMENTE TUDO na sidebar a ser branco */
+.cv-page.sidebar-layout .sidebar,
+.cv-page.sidebar-layout .sidebar p,
+.cv-page.sidebar-layout .sidebar span,
+.cv-page.sidebar-layout .sidebar div,
+.cv-page.sidebar-layout .sidebar li,
+.cv-page.sidebar-layout .sidebar strong,
+.cv-page.sidebar-layout .sidebar h2 {
+  color: #ffffff !important;
 }
 
-.sidebar p {
-  font-size: 14px;
-  color: #d1d5db;
+/* Nome principal */
+.cv-page.sidebar-layout .sidebar h2 {
+  font-size: 26px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.5px !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
 }
 
-/* SECTIONS SIDEBAR */
-
-.sidebar section {
-  margin-top: 10px;
+/* Cargo logo abaixo do nome */
+.cv-page.sidebar-layout .sidebar > p { 
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  margin-top: -20px !important; /* Aproxima o cargo do nome */
+  opacity: 0.9 !important;
 }
 
-.sidebar h3 {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 10px;
-  color: #9ca3af;
+/* Títulos das Seções (Mantendo a cor de destaque azul claro) */
+.cv-page.sidebar-layout .sidebar h3 {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  color: #60a5fa !important; /* AZUL CLARO PARA OS TÍTULOS */
+  margin: 0 0 14px 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding-bottom: 8px !important;
+  text-align: left !important;
 }
 
-/* LIST */
-
-.sidebar ul {
-  padding-left: 16px;
+/* Estilização de textos e listas na sidebar */
+.cv-page.sidebar-layout .sidebar section p,
+.cv-page.sidebar-layout .sidebar section div {
+  font-size: 13.5px !important;
+  margin-bottom: 8px !important;
+  line-height: 1.6 !important;
+  word-break: break-word !important;
 }
 
-.sidebar li {
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #e5e7eb;
+.cv-page.sidebar-layout .sidebar ul {
+  padding-left: 18px !important;
+  margin: 0 !important;
 }
 
-/* MAIN CONTENT */
-
-.content {
-  padding: 40px;
+.cv-page.sidebar-layout .sidebar li {
+  font-size: 13.5px !important;
+  margin-bottom: 8px !important;
+  list-style-type: square !important;
+  list-style-position: outside !important;
+  line-height: 1.5 !important;
 }
 
-/* HEADER MAIN */
 
-.content-header {
-  margin-bottom: 25px;
+/* =========================================
+   CONTEÚDO PRINCIPAL (FUNDO BRANCO)
+   Regra: Fundo Branco -> Textos em Preto
+========================================= */
+.cv-page.sidebar-layout .content {
+  padding: 45px 50px !important;
+  background: #ffffff !important;
+  text-align: left !important;
 }
 
-.content-header h1 {
-  font-size: 34px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+/* BLINDAGEM MÁXIMA: Força os textos comuns a serem pretos no fundo branco */
+.cv-page.sidebar-layout .content p,
+.cv-page.sidebar-layout .content div,
+.cv-page.sidebar-layout .content span,
+.cv-page.sidebar-layout .content li {
+  color: #111111 !important;
 }
 
-.content-header p {
-  font-size: 18px;
-  color: #555;
-  margin-top: 5px;
+/* Títulos das Seções (Experiência, Formação) */
+.cv-page.sidebar-layout .content h3 {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  color: #111111 !important; /* TEXTO PRETO RESTAURADO */
+  margin-bottom: 20px !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  padding-bottom: 8px !important;
 }
 
-/* SECTION */
-
-.content section {
-  margin-bottom: 28px;
+/* Quadradinho decorativo azul antes do título */
+.cv-page.sidebar-layout .content h3::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #3b82f6 !important; /* Mantém o detalhe azul */
 }
 
-.content h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #888;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+/* --- BLOCOS DE EXPERIÊNCIA E FORMAÇÃO --- */
+.cv-page.sidebar-layout .job,
+.cv-page.sidebar-layout .education-item,
+.cv-page.sidebar-layout .content section > div {
+  margin-bottom: 24px !important;
 }
 
-/* EXPERIENCE */
-
-.job {
-  margin-bottom: 16px;
+/* Container do título e da data */
+.cv-page.sidebar-layout .job > div:first-child,
+.cv-page.sidebar-layout .education-item > div:first-child {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  margin-bottom: 4px !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
 }
 
-.job strong {
-  font-size: 16px;
+/* Cargo / Curso */
+.cv-page.sidebar-layout .job strong,
+.cv-page.sidebar-layout .education-item strong {
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  color: #111111 !important; /* TEXTO PRETO */
 }
 
-.job p {
-  font-size: 14px;
-  color: #555;
+/* Empresa / Instituição (Mantém o destaque azul) */
+.cv-page.sidebar-layout .job-company {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #3b82f6 !important; /* AZUL VIBRANTE */
+  margin: 0 0 10px 0 !important;
 }
 
-.job-company {
-  font-style: italic;
-  color: #777;
+/* Datas */
+.cv-page.sidebar-layout .job > div:first-child > div:last-child,
+.cv-page.sidebar-layout .education-item > div:first-child > div:last-child {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #555555 !important; /* Cinza escuro para diferenciar as datas */
+  white-space: nowrap !important;
 }
 
-/* LIST */
-
-.content ul {
-  padding-left: 18px;
-  margin-top: 6px;
+/* --- BOLINHAS (BULLETS) DAS ATIVIDADES --- */
+.cv-page.sidebar-layout .content ul {
+  padding-left: 22px !important;
+  margin: 6px 0 0 0 !important;
 }
 
-.content li {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-/* EDUCATION */
-
-.education-item {
-  margin-bottom: 12px;
-}
-
-.education-item strong {
-  font-size: 15px;
-}
-
-/* GRID (opcional extras) */
-
-.content-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-/* RESPONSIVO */
-
-@media (max-width: 900px) {
-  .cv-page.sidebar-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .content {
-    padding: 25px;
-  }
+.cv-page.sidebar-layout .content li {
+  font-size: 14.5px !important;
+  color: #222222 !important; /* PRETO */
+  text-align: left !important; 
+  list-style-type: disc !important;
+  list-style-position: outside !important; 
+  margin-bottom: 6px !important;
+  line-height: 1.7 !important;
 }

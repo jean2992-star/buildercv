@@ -1,35 +1,113 @@
+/* src/templates/elegant.css */
+
 .cv-page.elegant {
   font-family: "Georgia", serif;
-  background: #f8f8f7;
+  background: #ffffff; /* Fundo branco fica mais limpo para impressão/PDF */
   color: #222;
+  line-height: 1.6;
+  min-height: 297mm;
 }
 
+/* --- CABEÇALHO AZUL --- */
 .elegant-header {
   background: #234f88;
   color: white;
   text-align: center;
-  padding: 40px;
+  padding: 35px 40px;
 }
 
 .elegant-header h1 {
-  font-size: 40px;
+  font-size: 34px !important;
   font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 8px 0;
 }
 
 .elegant-header p {
-  margin-top: 10px;
+  font-size: 14px !important;
+  margin: 4px 0;
+  color: #e0e7ff; /* Um branco levemente azulado para suavizar */
 }
 
+/* --- SEÇÕES BASE --- */
 .elegant-section {
   padding: 30px 50px;
+  text-align: left !important; /* Mata o vazamento de alinhamento centralizado */
 }
 
+/* Títulos das Seções */
 .elegant-section h3 {
-  font-size: 22px;
-  color: #234f88;
-  margin-bottom: 10px;
+  font-size: 18px !important;
+  color: #234f88 !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center !important;
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
 }
 
+/* A linha decorativa acima dos títulos */
+.elegant-section section > div:first-child {
+  margin: 0 auto 12px auto !important; /* Centraliza a linha perfeitamente */
+  border-color: #234f88 !important; /* Usa a cor do tema em vez de cinza */
+  width: 80px !important; /* Tamanho mais delicado e elegante */
+}
+
+/* Textos gerais (Resumo) */
+.elegant-section p {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  text-align: justify;
+}
+
+/* --- EXPERIÊNCIA E FORMAÇÃO --- */
 .elegant-job {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+}
+
+/* Cargo / Curso */
+.elegant-section section > div > div > p:nth-of-type(1),
+.elegant-job > p:nth-of-type(1) {
+  font-size: 16px !important;
+  color: #234f88 !important;
+  font-weight: 700 !important;
+  margin-bottom: 2px !important;
+  text-align: left !important;
+}
+
+/* Empresa / Instituição */
+.elegant-section section > div > div > p:nth-of-type(2),
+.elegant-job > p:nth-of-type(2) {
+  font-size: 14px !important;
+  color: #555 !important;
+  font-style: italic;
+  margin-bottom: 8px !important;
+  text-align: left !important;
+}
+
+/* --- CORREÇÃO DEFINITIVA DAS BOLINHAS (BULLETS) --- */
+.elegant-section ul {
+  padding-left: 20px !important;
+  margin-top: 8px !important;
+}
+
+.elegant-section li {
+  font-size: 13.5px !important;
+  text-align: left !important; /* Trava o texto na esquerda */
+  list-style-type: disc;
+  list-style-position: outside; /* Mantém a bolinha pra fora da margem do texto */
+  margin-bottom: 6px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* --- HABILIDADES E EXTRAS --- */
+/* Reduzindo as fontes gigantes do grid de habilidades */
+.elegant-section section > div[style*="grid"] {
+  font-size: 14px !important;
+}
+
+.elegant-section span {
+  font-size: 14px !important;
+  text-align: left;
 }

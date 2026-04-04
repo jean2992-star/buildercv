@@ -28,7 +28,7 @@ export default function NewTemp1({ data }) {
       <div className="cv-grid">
         <aside className="cv-sidebar">
           <section>
-            <h3>CONTACT</h3>
+            <h3>CONTATO</h3>
             {data?.endereco && <p>{data.endereco}</p>}
             {(data?.cidade || data?.estado) && (
               <p>{[data?.cidade, data?.estado].filter(Boolean).join(", ")}</p>
@@ -39,7 +39,7 @@ export default function NewTemp1({ data }) {
           </section>
 
           <section>
-            <h3>SKILLS</h3>
+            <h3>HABILIDADES</h3>
             {habilidades.length > 0 ? (
               <ul>
                 {habilidades.map((skill, i) => (
@@ -51,12 +51,12 @@ export default function NewTemp1({ data }) {
                 ))}
               </ul>
             ) : (
-              <p>No skills added</p>
+              <p>Nenhuma habilidade adicionada</p>
             )}
           </section>
 
           <section>
-            <h3>LANGUAGES</h3>
+            <h3>IDIOMAS</h3>
             {idiomas.length > 0 ? (
               <ul>
                 {idiomas.map((lang, i) => (
@@ -68,13 +68,13 @@ export default function NewTemp1({ data }) {
                 ))}
               </ul>
             ) : (
-              <p>No languages added</p>
+              <p>Nenhum idioma adicionado</p>
             )}
           </section>
 
           {cursos.length > 0 && (
             <section>
-              <h3>COURSES</h3>
+              <h3>CURSOS</h3>
               <ul>
                 {cursos.map((curso, i) => (
                   <li key={i}>
@@ -94,12 +94,12 @@ export default function NewTemp1({ data }) {
 
         <main className="cv-main">
           <section>
-            <h3>SUMMARY</h3>
-            <p>{data?.resumo || "Professional summary not provided."}</p>
+            <h3>RESUMO</h3>
+            <p>{data?.resumo || "Resumo profissional não fornecido."}</p>
           </section>
 
           <section>
-            <h3>WORK EXPERIENCE</h3>
+            <h3>EXPERIÊNCIA PROFISSIONAL</h3>
 
             {experiencias.length > 0 ? (
               experiencias.map((exp, i) => (
@@ -148,12 +148,12 @@ export default function NewTemp1({ data }) {
                 </div>
               ))
             ) : (
-              <p>No work experience added.</p>
+              <p>Nenhuma experiência profissional adicionada.</p>
             )}
           </section>
 
           <section>
-            <h3>EDUCATION</h3>
+            <h3>FORMAÇÃO</h3>
 
             {formacoes.length > 0 ? (
               formacoes.map((edu, i) => (
@@ -195,23 +195,23 @@ export default function NewTemp1({ data }) {
                 </div>
               ))
             ) : (
-              <p>No education added.</p>
+              <p>Nenhuma formação adicionada.</p>
             )}
           </section>
 
           <section>
-            <h3>REFERENCES</h3>
+            <h3>REFERÊNCIAS</h3>
 
             {referencias.length > 0 ? (
               referencias.map((ref, i) => (
                 <div key={i} className="job">
-                  <strong>{ref.nome || "Reference"}</strong>
+                  <strong>{ref.nome || "Referência"}</strong>
                   {ref.empresa && <p className="job-company">{ref.empresa}</p>}
                   {ref.contato && <p>{ref.contato}</p>}
                 </div>
               ))
             ) : (
-              <p>Available upon request.</p>
+              <p>Disponível sob solicitação.</p>
             )}
           </section>
         </main>

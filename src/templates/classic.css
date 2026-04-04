@@ -1,39 +1,90 @@
+/* src/templates/classic.css */
+
 .cv-page.classic {
   font-family: Georgia, "Times New Roman", serif;
-  color: #222;
-  padding: 48px;
+  color: #111;
+  padding: 45px 50px;
   background: #fff;
+  line-height: 1.6;
+  min-height: 297mm; /* Garante o formato A4 */
 }
 
+/* --- CABEÇALHO --- */
 .classic-header {
   text-align: center;
-  border-top: 4px solid #555;
-  border-bottom: 1px solid #aaa;
-  padding: 20px 0;
+  border-top: 2px solid #111;
+  border-bottom: 2px solid #111;
+  padding: 24px 0;
+  margin-bottom: 30px;
 }
 
 .classic-header h1 {
-  font-size: 38px;
-  font-weight: 900;
+  font-size: 30px;
+  font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 10px 0;
 }
 
 .classic-header p {
   font-style: italic;
-  margin-top: 6px;
+  font-size: 14.5px;
+  color: #333;
+  margin: 0;
 }
 
+/* --- SEÇÕES (Títulos e Resumo) --- */
 .classic-section {
-  margin-top: 30px;
+  margin-bottom: 28px;
+  text-align: left; /* Garante que o texto base nunca fique centralizado */
 }
 
 .classic-section h3 {
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: 700;
   text-transform: uppercase;
-  border-bottom: 1px solid #aaa;
-  margin-bottom: 10px;
+  text-align: center; /* Mantém apenas o título centralizado */
+  letter-spacing: 2px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 6px 0;
+  margin-bottom: 18px;
 }
 
+.classic-section > p {
+  font-size: 14px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* --- EXPERIÊNCIA E FORMAÇÃO --- */
 .classic-job {
-  margin-bottom: 16px;
+  margin-bottom: 22px;
+}
+
+/* Forçando tamanhos proporcionais para sobrescrever os estilos inline do JSX */
+.classic-job h4 {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  margin: 0 0 2px 0 !important;
+}
+
+.classic-job p {
+  font-size: 14px !important;
+  margin: 0;
+}
+
+/* --- CORREÇÃO DEFINITIVA DAS BOLINHAS (BULLET POINTS) --- */
+.classic-section ul {
+  padding-left: 20px !important;
+  margin-top: 8px !important;
+}
+
+.classic-section li {
+  font-size: 13.5px;
+  text-align: left; /* Trava o texto na esquerda */
+  list-style-type: disc;
+  list-style-position: outside; /* Mantém a bolinha alinhada fora da margem do texto */
+  margin-bottom: 6px;
+  line-height: 1.6;
 }

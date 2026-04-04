@@ -1,0 +1,137 @@
+/* src/templates/New_temp8.css */
+.new-temp8 {
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #111;
+  padding: 45px 55px;
+  line-height: 1.6;
+  background: #fff;
+  min-height: 297mm; /* Garante tamanho de página A4 */
+}
+
+/* Header */
+.header-n8 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.name-n8 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.role-n8 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.address-n8 {
+  font-size: 13.5px;
+  color: #333;
+}
+
+/* Row de Contatos idêntica ao modelo */
+.contact-row-n8 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: bold;
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 6px 0;
+  margin-bottom: 22px;
+}
+
+/* Sections & Títulos com Fundo Cinza */
+.section-n8 {
+  margin-bottom: 24px;
+}
+
+.section-title-container-n8 {
+  background-color: #eaeaea; /* Fundo cinza exato da imagem */
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 4px 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.section-title-n8 {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Profile Text: Justificado e Itálico */
+.profile-text-n8 {
+  font-style: italic;
+  font-size: 13px;
+  text-align: justify;
+  line-height: 1.7;
+  padding: 0 18px; /* Afasta um pouco das bordas laterais */
+}
+
+/* Experience Header Flex (A mágica da linha pontilhada) */
+.exp-item-n8 {
+  margin-bottom: 20px;
+}
+
+.exp-header-n8 {
+  display: flex;
+  align-items: flex-end; /* Alinha o texto por baixo */
+  margin-bottom: 8px;
+}
+
+.diamond-bullet {
+  font-size: 13px;
+}
+
+.exp-title-company-n8 {
+  font-size: 14.5px;
+  white-space: nowrap; /* Não deixa quebrar de linha */
+}
+
+/* A Linha Pontilhada Flexível */
+.dotted-leader-n8 {
+  flex-grow: 1; /* Preenche todo o espaço vazio */
+  border-bottom: 1.5px dotted #999;
+  margin: 0 12px;
+  position: relative;
+  top: -4px; /* Sobe a linha para ficar alinhada no meio da fonte */
+  min-width: 20px;
+}
+
+.exp-dates-container-n8 {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.exp-dates-n8 {
+  font-size: 12.5px;
+  color: #222;
+}
+
+.exp-location-n8 {
+  font-size: 11px;
+  color: #444;
+  margin-top: 2px;
+}
+
+/* Bullet Points das Atividades */
+.exp-activities-n8 {
+  font-size: 13px;
+  padding-left: 20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.exp-activities-n8 li {
+  list-style-type: disc;
+  list-style-position: outside; /* Mantém a bolinha pra fora, texto reto */
+  margin-bottom: 5px;
+  margin-left: 18px; /* Recuo exato da bolinha */
+}

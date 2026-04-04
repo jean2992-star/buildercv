@@ -1,135 +1,185 @@
-/* TEMPLATE 6 - CLEAN MINIMAL */
+/* src/templates/New_temp6.css */
 
-.cv-page.minimal-clean {
-  background: #ffffff;
-  color: #111;
-  font-family: "Sora", system-ui, sans-serif;
-  padding: 50px;
+.cv-page.minimal {
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-family: "Sora", "Inter", system-ui, sans-serif !important;
+  padding: 45px 50px !important;
+  line-height: 1.6 !important;
+  min-height: 297mm;
+  box-sizing: border-box;
+  text-align: left !important;
 }
 
-/* HEADER */
-
-.minimal-header {
-  border-bottom: 2px solid #111;
-  padding-bottom: 18px;
-  margin-bottom: 28px;
+/* DESTRUINDO O ALINHAMENTO CENTRALIZADO GLOBAL */
+.cv-page.minimal h1,
+.cv-page.minimal h2,
+.cv-page.minimal h3,
+.cv-page.minimal p,
+.cv-page.minimal span,
+.cv-page.minimal div,
+.cv-page.minimal li {
+  text-align: left !important;
 }
 
-.minimal-header h1 {
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+/* --- CABEÇALHO --- */
+.cv-page.minimal header {
+  border-bottom: 1px solid #eaeaea !important;
+  padding-bottom: 24px !important;
+  margin-bottom: 30px !important;
+  display: block !important;
+  background: transparent !important;
 }
 
-.minimal-header p {
-  font-size: 18px;
-  color: #555;
-  margin-top: 6px;
+.cv-page.minimal h1 {
+  font-size: 38px !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px !important;
+  color: #000000 !important;
+  margin: 0 0 6px 0 !important;
 }
 
-/* CONTACT */
-
-.minimal-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 12px;
-  font-size: 14px;
-  color: #444;
+.cv-page.minimal h1 + p {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: #555555 !important;
+  margin: 0 0 12px 0 !important;
 }
 
-/* SECTION */
-
-.minimal-section {
-  margin-bottom: 26px;
+.cv-page.minimal header > div {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important; /* Força os contatos para a esquerda */
+  gap: 16px !important;
+  font-size: 13.5px !important;
+  color: #777777 !important;
+  margin: 0 !important;
 }
 
-.minimal-section h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #888;
-  margin-bottom: 10px;
+/* --- SEÇÕES BASE --- */
+.cv-page.minimal section {
+  margin-bottom: 32px !important;
 }
 
-/* TEXT */
-
-.minimal-section p {
-  font-size: 15px;
-  line-height: 1.7;
+/* Títulos de Seção (Resumo, Experiência, etc) */
+.cv-page.minimal h3 {
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  color: #111111 !important; /* Título bem escuro e visível */
+  margin-bottom: 16px !important;
+  margin-top: 0 !important;
+  border-bottom: 1px solid #eaeaea !important;
+  padding-bottom: 8px !important;
 }
 
-/* EXPERIENCE */
-
-.minimal-item {
-  margin-bottom: 18px;
+.cv-page.minimal section > p {
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+  color: #333333 !important;
+  text-align: justify !important;
 }
 
-.minimal-item-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
+/* --- EXPERIÊNCIA E FORMAÇÃO --- */
+.cv-page.minimal section > div {
+  margin-bottom: 20px !important;
+  background: transparent !important; /* REMOVE O FUNDO CINZA GLOBAL */
+  border: none !important; /* REMOVE BORDAS GLOBAIS */
+  border-radius: 0 !important;
+  padding: 0 !important;
 }
 
-.minimal-item-header strong {
-  font-size: 16px;
-  font-weight: 700;
+.cv-page.minimal section > div > div:first-child {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  margin-bottom: 4px !important;
+  gap: 10px !important;
 }
 
-.minimal-item-header span {
-  font-size: 13px;
-  color: #777;
+/* Cargo / Curso */
+.cv-page.minimal strong {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #111111 !important; /* Texto Preto */
 }
 
-/* DESCRIPTION */
-
-.minimal-item ul {
-  margin-top: 8px;
-  padding-left: 18px;
+/* Força as datas a ficarem na direita */
+.cv-page.minimal section > div > div:first-child > div:last-child {
+  font-size: 13px !important;
+  color: #666666 !important;
+  white-space: nowrap !important;
+  text-align: right !important; 
 }
 
-.minimal-item li {
-  font-size: 14px;
-  margin-bottom: 4px;
+/* Empresa / Instituição */
+.cv-page.minimal section > div > div > p {
+  font-size: 14.5px !important;
+  font-weight: 500 !important;
+  color: #555555 !important;
+  margin: 0 0 10px 0 !important;
 }
 
-/* GRID (skills + languages) */
-
-.minimal-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+/* --- BOLINHAS (BULLETS) DAS ATIVIDADES --- */
+.cv-page.minimal ul {
+  margin: 6px 0 0 0 !important;
+  padding-left: 20px !important;
 }
 
-.minimal-grid div {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
+.cv-page.minimal li {
+  font-size: 14px !important;
+  color: #333333 !important; /* Texto Preto/Cinza Escuro */
+  margin-bottom: 6px !important;
+  line-height: 1.6 !important;
+  list-style-type: disc !important;
+  list-style-position: outside !important; 
 }
 
-/* EDUCATION */
-
-.minimal-edu {
-  margin-bottom: 12px;
+/* =========================================================
+   HABILIDADES E IDIOMAS (O FIM DAS CAIXAS CINZAS)
+========================================================= */
+.cv-page.minimal section > div[style*="grid"],
+.cv-page.minimal section > div[style*="flex"] {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px 30px !important;
 }
 
-.minimal-edu strong {
-  font-size: 15px;
+/* Força os itens a não terem fundo nenhum, sendo apenas texto */
+.cv-page.minimal section > div[style*="grid"] > div,
+.cv-page.minimal section > div[style*="flex"] > div {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 14px !important;
+  padding: 0 0 6px 0 !important;
+  margin: 0 !important;
+  background: transparent !important; /* DESTRÓI O FUNDO CINZA */
+  background-color: transparent !important;
+  border: none !important; /* DESTRÓI A BORDA ARREDONDADA */
+  border-radius: 0 !important;
+  border-bottom: 1px solid #f0f0f0 !important; /* Apenas um sublinhado ultra sutil */
 }
 
-/* RESPONSIVO */
+/* Nome da Habilidade (Pacote Office, etc) */
+.cv-page.minimal section > div[style*="grid"] > div > span:first-child,
+.cv-page.minimal section > div[style*="flex"] > div > span:first-child {
+  color: #111111 !important; /* PRETO ABSOLUTO */
+  font-weight: 600 !important;
+}
 
-@media (max-width: 768px) {
-  .cv-page.minimal-clean {
-    padding: 25px;
-  }
+/* Nível da Habilidade (Avançado, Intermediário) */
+.cv-page.minimal section > div[style*="grid"] > div > span:last-child,
+.cv-page.minimal section > div[style*="flex"] > div > span:last-child {
+  color: #666666 !important; /* CINZA ESCURO */
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  text-align: right !important;
+}
 
-  .minimal-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .minimal-header h1 {
-    font-size: 28px;
-  }
+/* Cursos (Removendo bordas soltas) */
+.cv-page.minimal section > div:not([style]) {
+  border-bottom: 1px solid #f0f0f0 !important;
+  padding-bottom: 12px !important;
 }
